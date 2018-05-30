@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <div padding>
-        <ion-segment [(ngModel)]="lauch">
+        <ion-segment [(ngModel)]="launch">
           <ion-segment-button value="latest">
             Latest
           </ion-segment-button>
@@ -25,25 +25,34 @@
         </ion-segment>
       </div>
       
-      <div [ngSwitch]="lauch">
+      <div [ngSwitch]="launch">
         <ion-list *ngSwitchCase="'latest'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-puppy-1.jpg">
-            </ion-thumbnail>
-            <h2>Ruby</h2>
-          </ion-item>
-          ...
+            <button ion-item *ngFor = "let launch of launchesLatest">
+                <ion-avatar item-start>
+                  <img src="{{ launch.links.mission_patch_small }}">
+                </ion-avatar>
+                <h2>
+                  <div float-left>{{ launch.mission_name }}</div>
+                  <div float-right>
+                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>
+                  </div>
+                </h2>
+                <br />
+                <p>{{ launch.details }}</p>
+            </button>
         </ion-list>
       
         <ion-list *ngSwitchCase="'soon'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-kitten-1.jpg">
-            </ion-thumbnail>
-            <h2>Luna</h2>
-          </ion-item>
-          ...
+            <button ion-item *ngFor = "let launch of launches"> 
+                <h2>
+                  <div float-left>{{ launch.mission_name }}</div>
+                  <div float-right>
+                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>
+                  </div>
+                </h2>
+                <br />
+                <p>{{ launch.site_name_long }}</p>
+            </button> 
         </ion-list>
       </div>
 
