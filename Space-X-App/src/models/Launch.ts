@@ -65,7 +65,7 @@ export interface Launch {
     payload_mass_kg?: number;
     payload_mass_lbs?: number;
     orbit: string;
-    cap_serial?: string;
+    cap_serial?:string;
     mass_returned_kg?: number;
     mass_returned_lbs?: number;
     flight_time_sec?: number;
