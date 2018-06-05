@@ -27,7 +27,7 @@
       
       <div [ngSwitch]="launch">
         <ion-list *ngSwitchCase="'latest'">
-            <button ion-item *ngFor = "let launch of launchesLatest">
+            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">
                 <ion-avatar item-start>
                   <img src="{{ launch.links.mission_patch_small }}">
                 </ion-avatar>
