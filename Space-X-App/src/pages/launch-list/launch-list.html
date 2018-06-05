@@ -10,20 +10,21 @@
     <ion-title>launch-list</ion-title>
   </ion-navbar>
 
+  <div padding>
+      <ion-segment [(ngModel)]="launch">
+        <ion-segment-button value="latest">
+          Latest
+        </ion-segment-button>
+        <ion-segment-button value="soon">
+          Soon
+        </ion-segment-button>
+      </ion-segment>
+    </div>
 </ion-header>
 
 
 <ion-content padding>
-    <div padding>
-        <ion-segment [(ngModel)]="launch">
-          <ion-segment-button value="latest">
-            Latest
-          </ion-segment-button>
-          <ion-segment-button value="soon">
-            Soon
-          </ion-segment-button>
-        </ion-segment>
-      </div>
+
       
       <div [ngSwitch]="launch">
         <ion-list *ngSwitchCase="'latest'">

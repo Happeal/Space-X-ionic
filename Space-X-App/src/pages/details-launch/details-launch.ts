@@ -19,7 +19,6 @@ export class DetailsLaunchPage {
 
   launch : Launch;
 
-  
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
