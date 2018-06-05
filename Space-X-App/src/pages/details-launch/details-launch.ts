@@ -19,15 +19,45 @@ export class DetailsLaunchPage {
 
   launch : Launch;
 
+  
+  sections = [];
+  sectionsName = [
+    "Rocket",
+    "Site",
+    "Reuse"
+  ];
+  sectionsOpen = [
+    false,
+    false,
+    false
+  ];
+
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private spacexApi: SpacexApiProvider ) {
       this.launch = this.navParams.data;
+
+      this.sections = [
+        this.launch.rocket,
+        this.launch.launch_site,
+        this.launch.reuse
+      ];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsLaunchPage');
+  }
+
+  sectionSelected(index : number){
+
+    for(let i = 0; i < this.sections.length; i++){
+      this.sectionsOpen[i] = false;
+      if(i == index){
+        this.sectionsOpen[i] = true;
+      }
+    }
+
   }
 
 }

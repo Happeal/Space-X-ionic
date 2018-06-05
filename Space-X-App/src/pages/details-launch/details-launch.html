@@ -28,19 +28,16 @@
 
 <ion-content padding>
 
-    <ion-list inset>
-        <button ion-item detail-push (click)="itemSelected(item)">
-          <p>Rocket</p>
-        </button> 
-        <button ion-item detail-push (click)="itemSelected(item)">
-          <p>Capsule</p>
-        </button> 
-        <button ion-item detail-push (click)="itemSelected(item)">
-          <p>Launchpad</p>
-        </button> 
-        <button ion-item detail-push (click)="itemSelected(item)">
-          <p>Reuse</p>
-        </button> 
+    <ion-list inset >
+      <div *ngFor="let section of sections; let i = index" >
+          <button ion-item detail-push (click)="sectionSelected(i)">
+              <p>{{sectionsName[i]}}</p>
+            </button>
+            <div *ngIf="sectionsOpen[i]">
+              <p>coucou</p>
+            </div>
+      </div>
+
       </ion-list>
 
 
