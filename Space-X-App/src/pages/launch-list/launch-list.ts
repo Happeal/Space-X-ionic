@@ -18,7 +18,7 @@ import { DetailsLaunchPage } from '../details-launch/details-launch';
 })
 export class LaunchListPage {
  
-  
+  launch : string = "latest";
   launches: Launch[];
   launchesLatest : Launch[];
 
