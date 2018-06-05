@@ -1,4 +1,4 @@
-interface Launchpad {
+export interface Launchpad {
     id: string;
     full_name: string;
     status: string;
@@ -7,7 +7,7 @@ interface Launchpad {
     details: string;
   }
   
-  interface Location {
+  export interface Location {
     name: string;
     region: string;
     latitude: number;
