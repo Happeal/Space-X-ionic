@@ -7,9 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>details-launch</ion-title>
+    <ion-title>{{launch.mission_name}}</ion-title>
   </ion-navbar>
-
 
   <ion-item no-lines>
       <ion-avatar item-start>
@@ -27,18 +26,51 @@
 
 
 <ion-content padding>
-
     <ion-list inset >
-      <div *ngFor="let section of sections; let i = index" >
-          <button ion-item detail-push (click)="sectionSelected(i)">
-              <p>{{sectionsName[i]}}</p>
-            </button>
-            <div *ngIf="sectionsOpen[i]">
-              <p>coucou</p>
-            </div>
+      <div>
+          <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >
+            <p>{{sectionsName[0]}}</p>
+          </button>
+            <ion-item *ngIf="sectionsOpen[0] && rocket" no-lines>
+                    <h2 text-wrap>{{rocket.name}}</h2>
+                    <h5 text-wrap>{{rocket.description}}</h5>
+
+                    <ion-col>
+                        <ion-badge color ="primary" item-end >{{rocket.active}}</ion-badge>
+                        <button ion-button color="light" item-end>More</button>
+                    </ion-col>
+            </ion-item>
       </div>
+      <div>
+          <button ion-item detail-push item-end clear (click)="sectionSelected(1)" >
+            <p>{{sectionsName[1]}}</p>
+          </button>
+            <ion-item *ngIf="sectionsOpen[1] && caps" no-lines>
+                    <h2 text-wrap>{{caps.type}}</h2>
+                    <h5 text-wrap>{{caps.details}}</h5>
 
+                    <ion-col>
+                        <ion-badge color ="primary" item-end  >{{ caps.status}}</ion-badge>
+                        <button ion-button color="light" item-end>More</button>
+                    </ion-col>
+            </ion-item>
+            <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>
+              <h5 text-wrap>Il n'y a pas de capsule pour ce lancement</h5>
+            </ion-item>
+      </div>
+      <div>
+          <button ion-item detail-push item-end clear (click)="sectionSelected(2)" >
+            <p>{{sectionsName[2]}}</p>
+          </button>
+            <ion-item *ngIf="sectionsOpen[2] && launchpad" no-lines>
+                    <h2 text-wrap>{{launchpad.full_name}}</h2>
+                    <h5 text-wrap>{{launchpad.details}}</h5>
+
+                    <ion-col>
+                        <ion-badge color ="primary" item-end  >{{ launchpad.status}}</ion-badge>
+                        <button ion-button color="light" item-end>More</button>
+                    </ion-col>
+            </ion-item>
+      </div>
       </ion-list>
-
-
 </ion-content>

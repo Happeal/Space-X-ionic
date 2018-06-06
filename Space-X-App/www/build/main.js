@@ -28,46 +28,58 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var DetailsLaunchPage = /** @class */ (function () {
     function DetailsLaunchPage(navCtrl, navParams, spacexApi) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.spacexApi = spacexApi;
         this.sections = [];
         this.sectionsName = [
             "Rocket",
+            "Capsule",
             "Site",
             "Reuse"
         ];
         this.sectionsOpen = [
             false,
             false,
+            false,
             false
         ];
+        this.sectionBadges = [];
         this.launch = this.navParams.data;
-        this.sections = [
-            this.launch.rocket,
-            this.launch.launch_site,
-            this.launch.reuse
-        ];
+        this.spacexApi.getLaunchpadByName(this.launch.launch_site.site_id).subscribe(function (data) {
+            _this.launchpad = data;
+        });
+        this.spacexApi.getRocketById(this.launch.rocket.rocket_id).subscribe(function (data) {
+            _this.rocket = data;
+        });
+        this.spacexApi.getCapsuleDetailBySerial(this.launch.rocket.second_stage.payloads[0].cap_serial)
+            .subscribe(function (data) {
+            _this.caps = data;
+        });
     }
     DetailsLaunchPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DetailsLaunchPage');
     };
     DetailsLaunchPage.prototype.sectionSelected = function (index) {
-        for (var i = 0; i < this.sections.length; i++) {
-            this.sectionsOpen[i] = false;
+        for (var i = 0; i < this.sectionsOpen.length; i++) {
             if (i == index) {
-                this.sectionsOpen[i] = true;
+                this.sectionsOpen[i] = !this.sectionsOpen[i];
+            }
+            else {
+                this.sectionsOpen[i] = false;
             }
         }
     };
     DetailsLaunchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-details-launch',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/'<!--\n  Generated template for the DetailsLaunchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>details-launch</ion-title>\n  </ion-navbar>\n\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n        <img src="{{ launch.links.mission_patch_small }}">\n      </ion-avatar>\n      <div>\n        <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n      </div>\n      <h2>{{ launch.mission_name }}</h2>\n      <p text-wrap> {{ launch.details }}</p>\n  </ion-item>\n\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-list inset >\n      <div *ngFor="let section of sections; let i = index" >\n          <button ion-item detail-push (click)="sectionSelected(i)">\n              <p>{{sectionsName[i]}}</p>\n            </button>\n            <div *ngIf="sectionsOpen[i]">\n              <p>coucou</p>\n            </div>\n      </div>\n\n      </ion-list>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/,
+            selector: 'page-details-launch',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/'<!--\n  Generated template for the DetailsLaunchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{launch.mission_name}}</ion-title>\n  </ion-navbar>\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n        <img src="{{ launch.links.mission_patch_small }}">\n      </ion-avatar>\n      <div>\n        <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n      </div>\n      <h2>{{ launch.mission_name }}</h2>\n      <p text-wrap> {{ launch.details }}</p>\n  </ion-item>\n\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list inset >\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n            <p>{{sectionsName[0]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[0] && rocket" no-lines>\n                    <h2 text-wrap>{{rocket.name}}</h2>\n                    <h5 text-wrap>{{rocket.description}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end >{{rocket.active}}</ion-badge>\n                        <button ion-button color="light" item-end>More</button>\n                    </ion-col>\n            </ion-item>\n      </div>\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(1)" >\n            <p>{{sectionsName[1]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[1] && caps" no-lines>\n                    <h2 text-wrap>{{caps.type}}</h2>\n                    <h5 text-wrap>{{caps.details}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end  >{{ caps.status}}</ion-badge>\n                        <button ion-button color="light" item-end>More</button>\n                    </ion-col>\n            </ion-item>\n            <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>\n              <h5 text-wrap>Il n\'y a pas de capsule pour ce lancement</h5>\n            </ion-item>\n      </div>\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(2)" >\n            <p>{{sectionsName[2]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[2] && launchpad" no-lines>\n                    <h2 text-wrap>{{launchpad.full_name}}</h2>\n                    <h5 text-wrap>{{launchpad.details}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end  >{{ launchpad.status}}</ion-badge>\n                        <button ion-button color="light" item-end>More</button>\n                    </ion-col>\n            </ion-item>\n      </div>\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], DetailsLaunchPage);
     return DetailsLaunchPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=details-launch.js.map
@@ -129,10 +141,11 @@ var LaunchListPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-launch-list',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-list</ion-title>\n  </ion-navbar>\n\n  <div padding>\n      <ion-segment [(ngModel)]="launch">\n        <ion-segment-button value="latest">\n          Latest\n        </ion-segment-button>\n        <ion-segment-button value="soon">\n          Soon\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n\n      \n      <div [ngSwitch]="launch">\n        <ion-list *ngSwitchCase="\'latest\'">\n            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">\n                <ion-avatar item-start>\n                  <img src="{{ launch.links.mission_patch_small }}">\n                </ion-avatar>\n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.details }}</p>\n            </button>\n        </ion-list>\n      \n        <ion-list *ngSwitchCase="\'soon\'">\n            <button ion-item *ngFor = "let launch of launches"> \n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.site_name_long }}</p>\n            </button> \n        </ion-list>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], LaunchListPage);
     return LaunchListPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=launch-list.js.map
@@ -513,6 +526,22 @@ var SpacexApiProvider = /** @class */ (function () {
     };
     SpacexApiProvider.prototype.getAllLaunchesLatest = function () {
         var EndpointUtl = this.baseUrl + "/launches";
+        return this.http.get(EndpointUtl);
+    };
+    SpacexApiProvider.prototype.getLaunchpadByName = function (name) {
+        var EndpointUtl = this.baseUrl + "/launchpads/" + name;
+        return this.http.get(EndpointUtl);
+    };
+    SpacexApiProvider.prototype.getRocketById = function (id) {
+        var EndpointUtl = this.baseUrl + "/rockets/" + id;
+        return this.http.get(EndpointUtl);
+    };
+    SpacexApiProvider.prototype.getCapsuleDetailBySerial = function (serial) {
+        var EndpointUtl = this.baseUrl + "/parts/caps/" + serial;
+        return this.http.get(EndpointUtl);
+    };
+    SpacexApiProvider.prototype.getCapsuleById = function (id) {
+        var EndpointUtl = this.baseUrl + "/capsules/" + id;
         return this.http.get(EndpointUtl);
     };
     SpacexApiProvider = __decorate([
