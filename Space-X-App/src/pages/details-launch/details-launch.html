@@ -54,6 +54,9 @@
                         <button ion-button color="light" item-end>More</button>
                     </ion-col>
             </ion-item>
+            <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>
+              <h5 text-wrap>Il n'y a pas de capsule pour ce lancement</h5>
+            </ion-item>
       </div>
       <div>
           <button ion-item detail-push item-end clear (click)="sectionSelected(2)" >
