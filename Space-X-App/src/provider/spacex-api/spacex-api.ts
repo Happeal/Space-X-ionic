@@ -2,6 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Launch } from '../../models/Launch';
+import { Rocket } from '../../models/Rocket';
+import { Launchpad } from '../../models/Launchpad';
+import { Capsule } from '../../models/Capsule';
+import { CapsuleDetail } from '../../models/Capsule';
+
 
 
 
@@ -27,6 +32,23 @@ export class SpacexApiProvider {
     return this.http.get<Launch[]>(EndpointUtl);
   }
 
+  getLaunchpadByName(name : string) : Observable<Launchpad>{
+    const EndpointUtl = `${this.baseUrl}/launchpads/${name}`;
+    return this.http.get<Launchpad>(EndpointUtl);
+  }
 
+  getRocketById(id : string) : Observable<Rocket>{
+    const EndpointUtl = `${this.baseUrl}/rockets/${id}`;
+    return this.http.get<Rocket>(EndpointUtl);
+  }
+
+  getCapsuleDetailBySerial(serial : string) : Observable<CapsuleDetail>{
+    const EndpointUtl = `${this.baseUrl}/parts/caps/${serial}`;
+    return this.http.get<CapsuleDetail>(EndpointUtl);
+  }
+  getCapsuleById(id : string) : Observable<Capsule>{
+    const EndpointUtl = `${this.baseUrl}/capsules/${id}`;
+    return this.http.get<Capsule>(EndpointUtl);
+  }
 
 }
