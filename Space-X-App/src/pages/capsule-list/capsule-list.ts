@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Capsule } from '../../models/Capsule';
-
+import { DetailsCapsulePage } from '../details-capsule/details-capsule';
 /**
  * Generated class for the CapsuleListPage page.
  *
@@ -29,4 +29,7 @@ export class CapsuleListPage {
     console.log('ionViewDidLoad CapsuleListPage');
   }
 
+  goToCapsule(capsule : Capsule){
+      this.navCtrl.push(DetailsCapsulePage, capsule);
+  }
 }

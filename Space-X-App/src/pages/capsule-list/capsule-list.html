@@ -26,7 +26,7 @@
   <div [ngSwitch]="capsule">
       <ion-list *ngSwitchCase="'active'">
         <div *ngFor = "let capsule of capsules">
-          <button ion-item *ngIf="capsule.active == true" >
+          <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">
               <h2>
                   <div float-left>{{ capsule.name }}</div>
                   <div float-right>

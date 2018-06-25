@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Launchpad } from '../../models/Launchpad';
+import { DetailsLaunchpadPage } from '../details-launchpad/details-launchpad';
 
 /**
  * Generated class for the LaunchpadListPage page.
@@ -31,4 +32,8 @@ export class LaunchpadListPage {
     console.log('ionViewDidLoad LaunchpadListPage');
   }
 
+
+  goToLaunchpad(launchpad : Launchpad){
+    this.navCtrl.push(DetailsLaunchpadPage, launchpad);
+  }
 }

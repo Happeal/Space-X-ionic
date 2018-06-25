@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Rocket } from '../../models/Rocket';
+import { DetailsRocketPage } from '../details-rocket/details-rocket';
 
 /**
  * Generated class for the RocketListPage page.
@@ -29,6 +30,9 @@ export class RocketListPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RocketListPage');
+  }
+  goToRocket(rocket : Rocket){
+    this.navCtrl.push(DetailsRocketPage, rocket);
   }
 
 

@@ -27,7 +27,7 @@
   <div [ngSwitch]="rocket">
     <ion-list *ngSwitchCase="'active'">
       <div *ngFor = "let rocket of rockets">
-        <button ion-item *ngIf="rocket.active == true" >
+        <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">
           <h2>
             <div float-left>{{ rocket.name }}</div>
             <div float-right>

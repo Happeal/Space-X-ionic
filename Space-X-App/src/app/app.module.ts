@@ -52,7 +52,8 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     DetailsCapsulePage,
     RocketListPage,
     CapsuleListPage,
-    LaunchpadListPage
+    LaunchpadListPage,
+    DetailsLaunchpadPage
   ],
   providers: [
     StatusBar,
