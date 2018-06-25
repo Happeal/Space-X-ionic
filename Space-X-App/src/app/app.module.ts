@@ -14,16 +14,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SpacexApiProvider } from '../provider/spacex-api/spacex-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
     TabsPage,
     LaunchListPage,
-    RocketListPage
+    RocketListPage,
+    CapsuleListPage
 
   ],
   imports: [
@@ -34,12 +33,10 @@ import { RocketListPage } from '../pages/rocket-list/rocket-list';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
     TabsPage,
     LaunchListPage,
-    RocketListPage
+    RocketListPage,
+    CapsuleListPage
   ],
   providers: [
     StatusBar,
