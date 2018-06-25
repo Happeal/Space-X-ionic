@@ -15,6 +15,7 @@ import { SpacexApiProvider } from '../provider/spacex-api/spacex-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
+import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
     TabsPage,
     LaunchListPage,
     RocketListPage,
-    CapsuleListPage
+    CapsuleListPage,
+    LaunchpadListPage
 
   ],
   imports: [
@@ -36,7 +38,8 @@ import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
     TabsPage,
     LaunchListPage,
     RocketListPage,
-    CapsuleListPage
+    CapsuleListPage,
+    LaunchpadListPage
   ],
   providers: [
     StatusBar,

@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([5],{
 
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,8 +6,8 @@ webpackJsonp([4],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapsuleListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,9 +58,9 @@ var CapsuleListPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__ = __webpack_require__(203);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,10 +122,62 @@ var LaunchListPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchpadListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the LaunchpadListPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LaunchpadListPage = /** @class */ (function () {
+    function LaunchpadListPage(navCtrl, navParams, spacexApi) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.spacexApi.getAllLaunchpads().subscribe(function (data) {
+            _this.launchpads = data;
+        });
+    }
+    LaunchpadListPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LaunchpadListPage');
+    };
+    LaunchpadListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-launchpad-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\launchpad-list\launchpad-list.html"*/'<!--\n\n  Generated template for the LaunchpadListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>launchpad-list</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <button ion-item *ngFor = "let launchpad of launchpads">\n\n      <h2>\n\n        <div float-left>{{ launchpad.location.name }}</div>\n\n        <div float-right>\n\n          <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n\n        </div>\n\n      </h2>\n\n      <br />\n\n      <p>{{ launchpad.location.region }}</p>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\launchpad-list\launchpad-list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+    ], LaunchpadListPage);
+    return LaunchpadListPage;
+}());
+
+//# sourceMappingURL=launchpad-list.js.map
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RocketListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,6 +202,7 @@ var RocketListPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.spacexApi = spacexApi;
+        this.rocket = "active";
         this.spacexApi.getAllRockets().subscribe(function (data) {
             _this.rockets = data;
         });
@@ -159,18 +212,19 @@ var RocketListPage = /** @class */ (function () {
     };
     RocketListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-rocket-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/'<!--\n\n  Generated template for the RocketListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>rocket-list</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <button ion-item *ngFor = "let rocket of rockets">\n\n      <h2>\n\n        <div float-left>{{ rocket.name }}</div>\n\n        <div float-right>\n\n          <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n\n        </div>\n\n      </h2>\n\n      <br />\n\n      <p>{{ rocket.first_flight }}</p>\n\n    </button>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/,
+            selector: 'page-rocket-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/'<!--\n\n  Generated template for the RocketListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>rocket-list</ion-title>\n\n  </ion-navbar>\n\n  <div padding>\n\n    <ion-segment [(ngModel)]="rocket">\n\n      <ion-segment-button value="active">\n\n        Active\n\n      </ion-segment-button>\n\n      <ion-segment-button value="retired">\n\n        Retired\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  \n\n  <div [ngSwitch]="rocket">\n\n    <ion-list *ngSwitchCase="\'active\'">\n\n      <div *ngFor = "let rocket of rockets">\n\n        <button ion-item *ngIf="rocket.active == true" >\n\n          <h2>\n\n            <div float-left>{{ rocket.name }}</div>\n\n            <div float-right>\n\n              <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n\n            </div>\n\n          </h2>\n\n          <br />\n\n          <p>{{ rocket.first_flight }}</p>\n\n        </button>\n\n        </div>\n\n    </ion-list>\n\n  \n\n    <ion-list *ngSwitchCase="\'retired\'">\n\n      <div *ngFor = "let rocket of rockets">\n\n      <button ion-item *ngIf="rocket.active == false" >\n\n        <h2>\n\n          <div float-left>{{ rocket.name }}</div>\n\n          <div float-right>\n\n            <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n\n          </div>\n\n        </h2>\n\n        <br />\n\n        <p>{{ rocket.first_flight }}</p>\n\n      </button>\n\n      </div>\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object])
     ], RocketListPage);
     return RocketListPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=rocket-list.js.map
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -183,28 +237,32 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/capsule-list/capsule-list.module": [
-		280,
-		3
+		281,
+		4
 	],
 	"../pages/details-launch/details-launch.module": [
-		281,
-		2
+		282,
+		3
 	],
 	"../pages/launch-list/launch-list.module": [
-		282,
+		283,
+		2
+	],
+	"../pages/launchpad-list/launchpad-list.module": [
+		284,
 		1
 	],
 	"../pages/rocket-list/rocket-list.module": [
-		283,
+		285,
 		0
 	]
 };
@@ -219,20 +277,21 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 156;
+webpackAsyncContext.id = 157;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__launch_list_launch_list__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -246,15 +305,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TabsPage = /** @class */ (function () {
     function TabsPage() {
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_1__launch_list_launch_list__["a" /* LaunchListPage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__["a" /* RocketListPage */];
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__["a" /* CapsuleListPage */];
-        this.tab4Root = __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__["a" /* CapsuleListPage */];
+        this.tab4Root = __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__["a" /* LaunchpadListPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="Launch" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Rocket" tabIcon="information-circle"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="Capsule" tabIcon="contacts"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="Site" tabIcon="contacts"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="Launch" tabIcon="home"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Rocket" tabIcon="information-circle"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="Capsule" tabIcon="contacts"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="Launchpad" tabIcon="contacts"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -265,14 +325,14 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsLaunchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -351,13 +411,13 @@ var DetailsLaunchPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -365,29 +425,31 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_launch_list_launch_list__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_rocket_list_rocket_list__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_rocket_list_rocket_list__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_capsule_list_capsule_list__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_launchpad_list_launchpad_list__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -410,7 +472,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_launch_list_launch_list__["a" /* LaunchListPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */]
+                __WEBPACK_IMPORTED_MODULE_11__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -419,6 +482,7 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/capsule-list/capsule-list.module#CapsuleListPageModule', name: 'CapsuleListPage', segment: 'capsule-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/details-launch/details-launch.module#DetailsLaunchPageModule', name: 'DetailsLaunchPage', segment: 'details-launch', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/launchpad-list/launchpad-list.module#LaunchpadListPageModule', name: 'LaunchpadListPage', segment: 'launchpad-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/rocket-list/rocket-list.module#RocketListPageModule', name: 'RocketListPage', segment: 'rocket-list', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -430,7 +494,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_launch_list_launch_list__["a" /* LaunchListPage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */]
+                __WEBPACK_IMPORTED_MODULE_11__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
@@ -447,16 +512,16 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(202);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -493,12 +558,12 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpacexApiProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -538,6 +603,10 @@ var SpacexApiProvider = /** @class */ (function () {
         var EndpointUtl = this.baseUrl + "/launchpads/" + name;
         return this.http.get(EndpointUtl);
     };
+    SpacexApiProvider.prototype.getAllLaunchpads = function () {
+        var EndpointUtl = this.baseUrl + "/launchpads";
+        return this.http.get(EndpointUtl);
+    };
     SpacexApiProvider.prototype.getRocketById = function (id) {
         var EndpointUtl = this.baseUrl + "/rockets/" + id;
         return this.http.get(EndpointUtl);
@@ -565,5 +634,5 @@ var SpacexApiProvider = /** @class */ (function () {
 
 /***/ })
 
-},[203]);
+},[204]);
 //# sourceMappingURL=main.js.map

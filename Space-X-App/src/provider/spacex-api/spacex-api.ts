@@ -27,8 +27,6 @@ export class SpacexApiProvider {
     return this.http.get<Launch[]>(EndpointUtl); 
   }
   
-
-
    getAllLaunchesLatest() : Observable<Launch[]>{
     const EndpointUtl = `${this.baseUrl}/launches`;
     return this.http.get<Launch[]>(EndpointUtl);
@@ -42,6 +40,11 @@ export class SpacexApiProvider {
   getLaunchpadByName(name : string) : Observable<Launchpad>{
     const EndpointUtl = `${this.baseUrl}/launchpads/${name}`;
     return this.http.get<Launchpad>(EndpointUtl);
+  }
+
+  getAllLaunchpads() : Observable<Launchpad[]>{
+    const EndpointUtl = `${this.baseUrl}/launchpads`;
+    return this.http.get<Launchpad[]>(EndpointUtl); 
   }
 
   getRocketById(id : string) : Observable<Rocket>{

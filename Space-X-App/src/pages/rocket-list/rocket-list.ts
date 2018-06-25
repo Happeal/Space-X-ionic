@@ -18,6 +18,7 @@ import { Rocket } from '../../models/Rocket';
 export class RocketListPage {
 
   rockets : Rocket[];
+  rocket : string = "active";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllRockets().subscribe(data =>{
@@ -29,5 +30,6 @@ export class RocketListPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RocketListPage');
   }
+
 
 }
