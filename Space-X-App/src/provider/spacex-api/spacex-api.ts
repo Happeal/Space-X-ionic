@@ -26,6 +26,7 @@ export class SpacexApiProvider {
     const EndpointUtl = `${this.baseUrl}/launches/upcoming`;
     return this.http.get<Launch[]>(EndpointUtl); 
   }
+  
 
 
    getAllLaunchesLatest() : Observable<Launch[]>{
@@ -56,5 +57,12 @@ export class SpacexApiProvider {
     const EndpointUtl = `${this.baseUrl}/capsules/${id}`;
     return this.http.get<Capsule>(EndpointUtl);
   }
+
+  getAllCapsule() : Observable<Capsule[]>{
+    const EndpointUtl = `${this.baseUrl}/capsules/`;
+    return this.http.get<Capsule[]>(EndpointUtl);
+  }
+
+
 
 }

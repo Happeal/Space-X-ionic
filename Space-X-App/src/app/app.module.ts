@@ -18,22 +18,21 @@ import { DetailsCapsulePage } from '../pages/details-capsule/details-capsule';
 import { DetailsLaunchpadPage } from '../pages/details-launchpad/details-launchpad';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
     TabsPage,
     LaunchListPage,
-
     DetailsLaunchPage,
     DetailsRocketPage,
     DetailsCapsulePage,
     DetailsLaunchpadPage,
-    RocketListPage
+    RocketListPage,
+    CapsuleListPage
+
 
   ],
   imports: [
@@ -44,15 +43,13 @@ import { RocketListPage } from '../pages/rocket-list/rocket-list';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
     TabsPage,
     LaunchListPage,
     DetailsLaunchPage,
     DetailsRocketPage,
     DetailsCapsulePage,
-    RocketListPage
+    RocketListPage,
+    CapsuleListPage
   ],
   providers: [
     StatusBar,
