@@ -9,20 +9,47 @@
   <ion-navbar>
     <ion-title>capsule-list</ion-title>
   </ion-navbar>
-
+  <div padding>
+      <ion-segment [(ngModel)]="capsule">
+        <ion-segment-button value="active">
+          Active
+        </ion-segment-button>
+        <ion-segment-button value="retired">
+          Retired
+        </ion-segment-button>
+      </ion-segment>
+    </div>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item *ngFor = "let capsule of capsules">
-      <h2>
-        <div float-left>{{ capsule.name }}</div>
-        <div float-right>
-          <ion-badge color ="primary">{{ capsule.active }}</ion-badge>
+  <div [ngSwitch]="capsule">
+      <ion-list *ngSwitchCase="'active'">
+        <div *ngFor = "let capsule of capsules">
+          <button ion-item *ngIf="capsule.active == true" >
+              <h2>
+                  <div float-left>{{ capsule.name }}</div>
+                  <div float-right>
+                    <ion-badge color ="primary">{{ capsule.active }}</ion-badge>
+                  </div>
+                </h2>
+                <br />
+          </button>
+          </div>
+      </ion-list>
+    
+      <ion-list *ngSwitchCase="'retired'">
+        <div *ngFor = "let capsule of capsules">
+        <button ion-item *ngIf="capsule.active == false" >
+            <h2>
+                <div float-left>{{ capsule.name }}</div>
+                <div float-right>
+                  <ion-badge color ="primary">{{ capsule.active }}</ion-badge>
+                </div>
+              </h2>
+              <br />
+        </button>
         </div>
-      </h2>
-      <br />
-    </button>
-  </ion-list>
+      </ion-list>
+    </div>  
 </ion-content>

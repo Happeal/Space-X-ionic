@@ -1,14 +1,19 @@
 webpackJsonp([3],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 290:
 =======
 /***/ 280:
 >>>>>>> features/list-capsules
+=======
+/***/ 282:
+>>>>>>> features/list-launchpads
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RocketListPageModule", function() { return RocketListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
@@ -20,6 +25,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__capsule_list__ = __webpack_require__(100);
 >>>>>>> features/list-capsules
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailsLaunchPageModule", function() { return DetailsLaunchPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_launch__ = __webpack_require__(203);
+>>>>>>> features/list-launchpads
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,6 +40,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var RocketListPageModule = /** @class */ (function () {
     function RocketListPageModule() {
@@ -50,22 +62,30 @@ var RocketListPageModule = /** @class */ (function () {
 =======
 var CapsuleListPageModule = /** @class */ (function () {
     function CapsuleListPageModule() {
+=======
+var DetailsLaunchPageModule = /** @class */ (function () {
+    function DetailsLaunchPageModule() {
+>>>>>>> features/list-launchpads
     }
-    CapsuleListPageModule = __decorate([
+    DetailsLaunchPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__capsule_list__["a" /* CapsuleListPage */],
+                __WEBPACK_IMPORTED_MODULE_2__details_launch__["a" /* DetailsLaunchPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__capsule_list__["a" /* CapsuleListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__details_launch__["a" /* DetailsLaunchPage */]),
             ],
         })
-    ], CapsuleListPageModule);
-    return CapsuleListPageModule;
+    ], DetailsLaunchPageModule);
+    return DetailsLaunchPageModule;
 }());
 
+<<<<<<< HEAD
 //# sourceMappingURL=capsule-list.module.js.map
 >>>>>>> features/list-capsules
+=======
+//# sourceMappingURL=details-launch.module.js.map
+>>>>>>> features/list-launchpads
 
 /***/ })
 

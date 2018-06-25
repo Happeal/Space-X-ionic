@@ -9,22 +9,54 @@
   <ion-navbar>
     <ion-title>rocket-list</ion-title>
   </ion-navbar>
-
+  <div padding>
+    <ion-segment [(ngModel)]="rocket">
+      <ion-segment-button value="active">
+        Active
+      </ion-segment-button>
+      <ion-segment-button value="retired">
+        Retired
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item *ngFor = "let rocket of rockets">
-      <h2>
-        <div float-left>{{ rocket.name }}</div>
-        <div float-right>
-          <ion-badge color ="primary">{{ rocket.active }}</ion-badge>
+  
+  <div [ngSwitch]="rocket">
+    <ion-list *ngSwitchCase="'active'">
+      <div *ngFor = "let rocket of rockets">
+        <button ion-item *ngIf="rocket.active == true" >
+          <h2>
+            <div float-left>{{ rocket.name }}</div>
+            <div float-right>
+              <ion-badge color ="primary">{{ rocket.active }}</ion-badge>
+            </div>
+          </h2>
+          <br />
+          <p>{{ rocket.first_flight }}</p>
+        </button>
         </div>
-      </h2>
-      <br />
-      <p>{{ rocket.first_flight }}</p>
-    </button>
-  </ion-list>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'retired'">
+      <div *ngFor = "let rocket of rockets">
+      <button ion-item *ngIf="rocket.active == false" >
+        <h2>
+          <div float-left>{{ rocket.name }}</div>
+          <div float-right>
+            <ion-badge color ="primary">{{ rocket.active }}</ion-badge>
+          </div>
+        </h2>
+        <br />
+        <p>{{ rocket.first_flight }}</p>
+      </button>
+      </div>
+    </ion-list>
+  </div>
+
+
+
 
 </ion-content>
