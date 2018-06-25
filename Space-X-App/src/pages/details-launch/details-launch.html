@@ -14,9 +14,7 @@
       <ion-avatar item-start>
         <img src="{{ launch.links.mission_patch_small }}">
       </ion-avatar>
-      <div>
-        <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>
-      </div>
+      <ion-badge color ="primary" item-end>{{ launch.launch_success }}</ion-badge>
       <h2>{{ launch.mission_name }}</h2>
       <p text-wrap> {{ launch.details }}</p>
   </ion-item>
@@ -55,7 +53,7 @@
                     </ion-col>
             </ion-item>
             <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>
-              <h5 text-wrap>Il n'y a pas de capsule pour ce lancement</h5>
+              <h5 text-wrap>There is no capsule corresponding to the following launch.</h5>
             </ion-item>
       </div>
       <div>
