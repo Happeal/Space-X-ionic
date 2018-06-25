@@ -1,0 +1,30 @@
+<!--
+  Generated template for the RocketListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>rocket-list</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor = "let rocket of rockets">
+      <h2>
+        <div float-left>{{ rocket.name }}</div>
+        <div float-right>
+          <ion-badge color ="primary">{{ rocket.active }}</ion-badge>
+        </div>
+      </h2>
+      <br />
+      <p>{{ rocket.first_flight }}</p>
+    </button>
+  </ion-list>
+
+</ion-content>
