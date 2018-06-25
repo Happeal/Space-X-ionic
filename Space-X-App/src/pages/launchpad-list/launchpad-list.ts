@@ -17,6 +17,7 @@ import { Launchpad } from '../../models/Launchpad';
 })
 export class LaunchpadListPage {
   launchpads : Launchpad[];
+  launchpad : string = "active";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllLaunchpads().subscribe(data =>{
