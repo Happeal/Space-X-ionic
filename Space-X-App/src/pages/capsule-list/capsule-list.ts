@@ -17,6 +17,7 @@ import { Capsule } from '../../models/Capsule';
 })
 export class CapsuleListPage {
   capsules : Capsule[]
+  capsule : string = "active";
   constructor(public navCtrl: NavController, public navParams: NavParams,private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllCapsule().subscribe(data =>{
       this.capsules = data;
