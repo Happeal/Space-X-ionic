@@ -448,27 +448,27 @@ webpackEmptyAsyncContext.id = 117;
 var map = {
 	"../pages/details-capsule/details-capsule.module": [
 		285,
-		5
+		2
 	],
 	"../pages/details-launch/details-launch.module": [
 		286,
-		4
+		5
 	],
 	"../pages/details-launchpad/details-launchpad.module": [
 		287,
-		3
+		1
 	],
 	"../pages/details-rocket/details-rocket.module": [
 		288,
-		2
+		0
 	],
 	"../pages/launch-list/launch-list.module": [
 		289,
-		1
+		4
 	],
 	"../pages/rocket-list/rocket-list.module": [
 		290,
-		0
+		3
 	]
 };
 function webpackAsyncContext(req) {
