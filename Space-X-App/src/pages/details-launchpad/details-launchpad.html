@@ -1,0 +1,77 @@
+<!--
+  Generated template for the DetailsLaunchpadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!-- export interface Launchpad {
+    id: string;
+    full_name: string;
+    status: string;
+    location: Location;
+    vehicles_launched: string[];
+    details: string;
+  }
+  
+  export interface Location {
+    name: string;
+    region: string;
+    latitude: number;
+    longitude: number;
+  } -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{launchpad.full_name}}</ion-title>
+  </ion-navbar>
+
+  <ion-item no-lines>
+      <ion-avatar item-start>
+          <img src="">
+        </ion-avatar>
+      <h2>{{launchpad.full_name}} </h2>
+      <p>Status : <ion-badge color ="primary" item-end>{{ launchpad.status }}</ion-badge></p>
+  </ion-item>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list inset >
+        <div>
+            <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >
+              <p>{{sectionsName[0]}}</p>
+            </button>
+              <ion-item *ngIf="sectionsOpen[0]" no-lines>
+                      <p text-wrap>{{launchpad.details}}</p>
+              </ion-item>
+        </div>
+        <div>
+            <button ion-item detail-push item-end clear (click)="sectionSelected(1)">
+              <p>{{sectionsName[1]}}</p>
+            </button>
+  
+  
+            <ion-item *ngIf="sectionsOpen[1]" no-lines>
+                <div *ngFor="let vehicle of launchpad.vehicles_launched; let i = index" [attr.data-index]="i">
+                  <h2>Vehicle n°{{i+1}} : </h2>
+                  <p text-wrap>{{vehicle}}</p>
+                </div>
+            </ion-item>
+    
+          </div>
+          <div>
+              <button ion-item detail-push item-end clear (click)="sectionSelected(2)">
+                <p>{{sectionsName[2]}}</p>
+              </button>
+              <ion-item *ngIf="sectionsOpen[2]" no-lines>
+                <p text-wrap>Name : {{ launchpad.location.name }}</p>
+                <p text-wrap>Region : {{ launchpad.location.region }}</p>
+                <p text-wrap>Latitude : {{ launchpad.location.latitude }}</p>
+                <p text-wrap>Longitude : {{ launchpad.location.longitude }}</p>
+              </ion-item>
+            </div>
+    </ion-list>
+
+</ion-content>

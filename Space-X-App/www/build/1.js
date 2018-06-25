@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 281:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailsLaunchPageModule", function() { return DetailsLaunchPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailsRocketPageModule", function() { return DetailsRocketPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_launch__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_rocket__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetailsLaunchPageModule = /** @class */ (function () {
-    function DetailsLaunchPageModule() {
+var DetailsRocketPageModule = /** @class */ (function () {
+    function DetailsRocketPageModule() {
     }
-    DetailsLaunchPageModule = __decorate([
+    DetailsRocketPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__details_launch__["a" /* DetailsLaunchPage */],
+                __WEBPACK_IMPORTED_MODULE_2__details_rocket__["a" /* DetailsRocketPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__details_launch__["a" /* DetailsLaunchPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__details_rocket__["a" /* DetailsRocketPage */]),
             ],
         })
-    ], DetailsLaunchPageModule);
-    return DetailsLaunchPageModule;
+    ], DetailsRocketPageModule);
+    return DetailsRocketPageModule;
 }());
 
-//# sourceMappingURL=details-launch.module.js.map
+//# sourceMappingURL=details-rocket.module.js.map
 
 /***/ })
 

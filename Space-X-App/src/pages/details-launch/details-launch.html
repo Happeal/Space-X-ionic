@@ -35,7 +35,7 @@
 
                     <ion-col>
                         <ion-badge color ="primary" item-end >{{rocket.active}}</ion-badge>
-                        <button ion-button color="light" item-end>More</button>
+                        <button ion-button color="light" item-end (click)="goToRocket(rocket)">More</button>
                     </ion-col>
             </ion-item>
       </div>
@@ -49,7 +49,7 @@
 
                     <ion-col>
                         <ion-badge color ="primary" item-end  >{{ caps.status}}</ion-badge>
-                        <button ion-button color="light" item-end>More</button>
+                        <button ion-button color="light" item-end (click)="goToCapsule()">More</button>
                     </ion-col>
             </ion-item>
             <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>
@@ -65,10 +65,11 @@
                     <h5 text-wrap>{{launchpad.details}}</h5>
 
                     <ion-col>
-                        <ion-badge color ="primary" item-end  >{{ launchpad.status}}</ion-badge>
-                        <button ion-button color="light" item-end>More</button>
+                        <ion-badge color ="primary" item-end >{{launchpad.status}}</ion-badge>
+                        <button ion-button color="light" item-end (click)="goToLaunchpad(launchpad)">More</button>
                     </ion-col>
             </ion-item>
       </div>
+      
       </ion-list>
 </ion-content>
