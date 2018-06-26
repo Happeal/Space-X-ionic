@@ -21,9 +21,16 @@
 </ion-header>
 
 <ion-content padding>
+
+    <ion-searchbar
+    [(ngModel)]="Launchpad"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)">
+    </ion-searchbar>
+
   <div [ngSwitch]="launchpad">
       <ion-list *ngSwitchCase="'active'">
-        <div *ngFor = "let launchpad of launchpads"  >
+        <div *ngFor = "let launchpad of FilterLaunchpadsActive"  >
           <button ion-item *ngIf="launchpad.status == 'active' || launchpad.status == 'under construction'" (click)="goToLaunchpad(launchpad)">
             <h2>
                   <div float-left>{{ launchpad.location.name }}</div>
@@ -38,7 +45,7 @@
       </ion-list>
     
       <ion-list *ngSwitchCase="'retired'">
-        <div *ngFor = "let launchpad of launchpads">
+        <div *ngFor = "let launchpad of FilterLaunchpadsRetired">
         <button ion-item *ngIf="launchpad.status == 'retired'" >
             <h2>
                 <div float-left>{{ launchpad.location.name }}</div>

@@ -37,6 +37,8 @@ var CapsuleListPage = /** @class */ (function () {
         this.capsule = "active";
         this.spacexApi.getAllCapsule().subscribe(function (data) {
             _this.capsules = data;
+            _this.initializeItemsRetired();
+            _this.initializeItemsActive();
         });
     }
     CapsuleListPage.prototype.ionViewDidLoad = function () {
@@ -45,9 +47,43 @@ var CapsuleListPage = /** @class */ (function () {
     CapsuleListPage.prototype.goToCapsule = function (capsule) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_capsule_details_capsule__["a" /* DetailsCapsulePage */], capsule);
     };
+    CapsuleListPage.prototype.onInput = function (searchTerm) {
+        if (this.capsule == 'retired') {
+            this.initializeItemsRetired();
+            var searchValue = searchTerm.srcElement.value;
+            if (!searchValue) {
+                return;
+            }
+            this.FilterCapsulesRetired = this.FilterCapsulesRetired.filter(function (item) {
+                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+        else if (this.capsule == 'active') {
+            this.initializeItemsActive();
+            var searchValueActive = searchTerm.srcElement.value;
+            if (!searchValueActive) {
+                return;
+            }
+            this.FilterCapsulesActive = this.FilterCapsulesActive.filter(function (itemActive) {
+                if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+    };
+    CapsuleListPage.prototype.initializeItemsRetired = function () {
+        this.FilterCapsulesRetired = this.capsules;
+    };
+    CapsuleListPage.prototype.initializeItemsActive = function () {
+        this.FilterCapsulesActive = this.capsules;
+    };
     CapsuleListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-capsule-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/'<!--\n  Generated template for the CapsuleListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>capsule-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="capsule">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n  <div [ngSwitch]="capsule">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let capsule of capsules">\n          <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">\n              <h2>\n                  <div float-left>{{ capsule.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let capsule of capsules">\n        <button ion-item *ngIf="capsule.active == false" >\n            <h2>\n                <div float-left>{{ capsule.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n        </button>\n        </div>\n      </ion-list>\n    </div>  \n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/,
+            selector: 'page-capsule-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/'<!--\n  Generated template for the CapsuleListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>capsule-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="capsule">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-searchbar\n    [(ngModel)]="Capsule"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event)">\n    </ion-searchbar>\n\n  <div [ngSwitch]="capsule">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let capsule of FilterCapsulesActive">\n          <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">\n              <h2>\n                  <div float-left>{{ capsule.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let capsule of FilterCapsulesRetired">\n        <button ion-item *ngIf="capsule.active == false" >\n            <h2>\n                <div float-left>{{ capsule.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n        </button>\n        </div>\n      </ion-list>\n    </div>  \n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], CapsuleListPage);
@@ -259,10 +295,12 @@ var LaunchListPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-launch-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-list</ion-title>\n  </ion-navbar>\n\n  <div padding>\n      <ion-segment [(ngModel)]="launch">\n        <ion-segment-button value="latest">\n          Latest\n        </ion-segment-button>\n        <ion-segment-button value="soon">\n          Soon\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="Launch"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event)">\n  </ion-searchbar>\n\n       <div [ngSwitch]="launch">\n        <ion-list *ngSwitchCase="\'latest\'">\n            <button ion-item *ngFor = "let launch of FilterLaunchLatest" (click)="goToDetails(launch)">\n                <ion-avatar item-start>\n                  <img src="{{ launch.links.mission_patch_small }}">\n                </ion-avatar>\n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.details }}</p>\n            </button>\n        </ion-list>\n      \n        <ion-list *ngSwitchCase="\'soon\'">\n            <button ion-item *ngFor = "let launch of FilterLaunch"> \n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.site_name_long }}</p>\n            </button> \n        </ion-list>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */]])
     ], LaunchListPage);
     return LaunchListPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=launch-list.js.map
@@ -314,9 +352,43 @@ var LaunchpadListPage = /** @class */ (function () {
     LaunchpadListPage.prototype.goToLaunchpad = function (launchpad) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */], launchpad);
     };
+    LaunchpadListPage.prototype.onInput = function (searchTerm) {
+        if (this.launchpad == 'retired') {
+            this.initializeItemsRetired();
+            var searchValue = searchTerm.srcElement.value;
+            if (!searchValue) {
+                return;
+            }
+            this.FilterLaunchpadsRetired = this.FilterLaunchpadsRetired.filter(function (item) {
+                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+        else if (this.launchpad == 'active') {
+            this.initializeItemsActive();
+            var searchValueActive = searchTerm.srcElement.value;
+            if (!searchValueActive) {
+                return;
+            }
+            this.FilterLaunchpadsActive = this.FilterLaunchpadsActive.filter(function (itemActive) {
+                if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+    };
+    LaunchpadListPage.prototype.initializeItemsRetired = function () {
+        this.FilterLaunchpadsRetired = this.launchpads;
+    };
+    LaunchpadListPage.prototype.initializeItemsActive = function () {
+        this.FilterLaunchpadsActive = this.launchpads;
+    };
     LaunchpadListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launchpad-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/'<!--\n  Generated template for the LaunchpadListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>launchpad-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="launchpad">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>  \n</ion-header>\n\n<ion-content padding>\n  <div [ngSwitch]="launchpad">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let launchpad of launchpads"  >\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n            <h2>\n                  <div float-left>{{ launchpad.location.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launchpad.location.region }}</p>\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let launchpad of launchpads">\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n            <h2>\n                <div float-left>{{ launchpad.location.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n              <p>{{ launchpad.location.region }}</p>\n        </button>\n        </div>\n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/,
+            selector: 'page-launchpad-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/'<!--\n  Generated template for the LaunchpadListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>launchpad-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="launchpad">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>  \n</ion-header>\n\n<ion-content padding>\n\n    <ion-searchbar\n    [(ngModel)]="Launchpad"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event)">\n    </ion-searchbar>\n\n  <div [ngSwitch]="launchpad">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let launchpad of FilterLaunchpadsActive"  >\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n            <h2>\n                  <div float-left>{{ launchpad.location.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launchpad.location.region }}</p>\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let launchpad of FilterLaunchpadsRetired">\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n            <h2>\n                <div float-left>{{ launchpad.location.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n              <p>{{ launchpad.location.region }}</p>\n        </button>\n        </div>\n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], LaunchpadListPage);
@@ -364,6 +436,8 @@ var RocketListPage = /** @class */ (function () {
         this.rocket = "active";
         this.spacexApi.getAllRockets().subscribe(function (data) {
             _this.rockets = data;
+            _this.initializeItemsActive();
+            _this.initializeItemsRetired();
         });
     }
     RocketListPage.prototype.ionViewDidLoad = function () {
@@ -372,9 +446,43 @@ var RocketListPage = /** @class */ (function () {
     RocketListPage.prototype.goToRocket = function (rocket) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_rocket_details_rocket__["a" /* DetailsRocketPage */], rocket);
     };
+    RocketListPage.prototype.onInput = function (searchTerm) {
+        if (this.rocket == 'retired') {
+            this.initializeItemsRetired();
+            var searchValue = searchTerm.srcElement.value;
+            if (!searchValue) {
+                return;
+            }
+            this.FilterRocketsRetired = this.FilterRocketsRetired.filter(function (item) {
+                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+        else if (this.rocket == 'active') {
+            this.initializeItemsActive();
+            var searchValueActive = searchTerm.srcElement.value;
+            if (!searchValueActive) {
+                return;
+            }
+            this.FilterRocketsActive = this.FilterRocketsActive.filter(function (itemActive) {
+                if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+    };
+    RocketListPage.prototype.initializeItemsRetired = function () {
+        this.FilterRocketsRetired = this.rockets;
+    };
+    RocketListPage.prototype.initializeItemsActive = function () {
+        this.FilterRocketsActive = this.rockets;
+    };
     RocketListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-rocket-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/'<!--\n  Generated template for the RocketListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>rocket-list</ion-title>\n  </ion-navbar>\n  <div padding>\n    <ion-segment [(ngModel)]="rocket">\n      <ion-segment-button value="active">\n        Active\n      </ion-segment-button>\n      <ion-segment-button value="retired">\n        Retired\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <div [ngSwitch]="rocket">\n    <ion-list *ngSwitchCase="\'active\'">\n      <div *ngFor = "let rocket of rockets">\n        <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">\n          <h2>\n            <div float-left>{{ rocket.name }}</div>\n            <div float-right>\n              <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n            </div>\n          </h2>\n          <br />\n          <p>{{ rocket.first_flight }}</p>\n        </button>\n        </div>\n    </ion-list>\n  \n    <ion-list *ngSwitchCase="\'retired\'">\n      <div *ngFor = "let rocket of rockets">\n      <button ion-item *ngIf="rocket.active == false" >\n        <h2>\n          <div float-left>{{ rocket.name }}</div>\n          <div float-right>\n            <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n          </div>\n        </h2>\n        <br />\n        <p>{{ rocket.first_flight }}</p>\n      </button>\n      </div>\n    </ion-list>\n  </div>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/,
+            selector: 'page-rocket-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/'<!--\n  Generated template for the RocketListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>rocket-list</ion-title>\n  </ion-navbar>\n  <div padding>\n    <ion-segment [(ngModel)]="rocket">\n      <ion-segment-button value="active">\n        Active\n      </ion-segment-button>\n      <ion-segment-button value="retired">\n        Retired\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <ion-searchbar\n  [(ngModel)]="Rocket"\n  [showCancelButton]="shouldShowCancel"\n  (ionInput)="onInput($event)">\n  </ion-searchbar>\n  \n  <div [ngSwitch]="rocket">\n    <ion-list *ngSwitchCase="\'active\'">\n      <div *ngFor = "let rocket of FilterRocketsActive">\n        <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">\n          <h2>\n            <div float-left>{{ rocket.name }}</div>\n            <div float-right>\n              <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n            </div>\n          </h2>\n          <br />\n          <p>{{ rocket.first_flight }}</p>\n        </button>\n        </div>\n    </ion-list>\n  \n    <ion-list *ngSwitchCase="\'retired\'">\n      <div *ngFor = "let rocket of FilterRocketsRetired">\n      <button ion-item *ngIf="rocket.active == false" >\n        <h2>\n          <div float-left>{{ rocket.name }}</div>\n          <div float-right>\n            <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n          </div>\n        </h2>\n        <br />\n        <p>{{ rocket.first_flight }}</p>\n      </button>\n      </div>\n    </ion-list>\n  </div>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], RocketListPage);
@@ -870,7 +978,7 @@ var DetailsRocketPage = /** @class */ (function () {
     };
     DetailsRocketPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-details-rocket',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/'<!--\n  Generated template for the DetailsRocketPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n<ion-header>\n\n\n  <ion-navbar>\n    <ion-title>{{rocket.name}} </ion-title>\n\n  </ion-navbar>\n  <ion-item no-lines>\n    <ion-avatar item-start>\n      <img src="../../assets/icon/rocket.svg">\n    </ion-avatar>\n    <h2>{{rocket.name}} </h2>\n    <p>Type : {{rocket.type}}</p>\n    <p>Active :\n      <ion-badge color="primary" item-end>{{ rocket.active }}</ion-badge>\n    </p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list inset>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(0)">\n        <p>{{sectionsName[0]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[0]" no-lines>\n        <p text-wrap> {{ rocket.description }}</p>\n      </ion-item>\n    </div>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n        <p>{{sectionsName[1]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[1]" no-lines>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Stages : </h1>\n            <p>{{rocket.stages}}</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Boosters : </h1>\n            <p>{{rocket.boosters}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Coast per launch : </h1>\n            <p>{{rocket.cost_per_launch}}$</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Success rate : </h1>\n            <p>{{rocket.success_rate_pct}}%</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Height : </h1>\n            <p>{{rocket.height.meters}}m</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Diameter : </h1>\n            <p>{{rocket.diameter.meters}}m</p>\n          </ion-col>\n        </ion-row>\n\n      </ion-item>\n    </div>\n\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n        <p>{{sectionsName[2]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[2]" no-lines>\n        <p text-wrap>Number : {{ rocket.engines.number }}</p>\n        <p text-wrap>Type : {{ rocket.engines.type }}</p>\n        <p text-wrap>Version : {{ rocket.engines.version }}</p>\n        <p text-wrap>Layout : {{ rocket.engines.layout }}</p>\n      </ion-item>\n    </div>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/,
+            selector: 'page-details-rocket',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/'<!--\n  Generated template for the DetailsRocketPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n<ion-header>\n\n\n  <ion-navbar>\n    <ion-title>{{rocket.name}} </ion-title>\n\n  </ion-navbar>\n  <ion-item no-lines>\n    <ion-avatar item-start>\n      <img src="../../assets/icon/rocket.svg">\n    </ion-avatar>\n    <h2>{{rocket.name}} </h2>\n    <p>Type : {{rocket.type}}</p>\n    <p>Active :\n      <ion-badge color="primary" item-end>{{ rocket.active }}</ion-badge>\n    </p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list inset>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(0)">\n        <p>{{sectionsName[0]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[0]" no-lines>\n        <p text-wrap> {{ rocket.description }}</p>\n      </ion-item>\n    </div>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n        <p>{{sectionsName[1]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[1]" no-lines>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Stages : </h1>\n            <p>{{rocket.stages}}</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Boosters : </h1>\n            <p>{{rocket.boosters}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Coast per launch : </h1>\n            <p>{{rocket.cost_per_launch}}$</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Success rate : </h1>\n            <p>{{rocket.success_rate_pct}}%</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Height : </h1>\n            <p>{{rocket.height.meters}}m</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Diameter : </h1>\n            <p>{{rocket.diameter.meters}}m</p>\n          </ion-col>\n        </ion-row>\n\n      </ion-item>\n    </div>\n\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n        <p>{{sectionsName[2]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[2]" no-lines>\n        <p text-wrap>Number : {{ rocket.engines.number }}</p>\n        <p text-wrap>Type : {{ rocket.engines.type }}</p>\n        <p text-wrap>Version : {{ rocket.engines.version }}</p>\n        <p text-wrap>Layout : {{ rocket.engines.layout }}</p>\n      </ion-item>\n    </div>\n  </ion-list>\n  <div float-right>Country : {{rocket.country}}</div>\n</ion-content>'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], DetailsRocketPage);
@@ -937,7 +1045,7 @@ var DetailsLaunchpadPage = /** @class */ (function () {
     };
     DetailsLaunchpadPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-details-launchpad',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/'<!--\n  Generated template for the DetailsLaunchpadPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- export interface Launchpad {\n    id: string;\n    full_name: string;\n    status: string;\n    location: Location;\n    vehicles_launched: string[];\n    details: string;\n  }\n  \n  export interface Location {\n    name: string;\n    region: string;\n    latitude: number;\n    longitude: number;\n  } -->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{launchpad.full_name}}</ion-title>\n  </ion-navbar>\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n          <img src="">\n        </ion-avatar>\n      <h2>{{launchpad.full_name}} </h2>\n      <p>Status : <ion-badge color ="primary" item-end>{{ launchpad.status }}</ion-badge></p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list inset >\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n              <p>{{sectionsName[0]}}</p>\n            </button>\n              <ion-item *ngIf="sectionsOpen[0]" no-lines>\n                      <p text-wrap>{{launchpad.details}}</p>\n              </ion-item>\n        </div>\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n              <p>{{sectionsName[1]}}</p>\n            </button>\n  \n  \n            <ion-item *ngIf="sectionsOpen[1]" no-lines>\n                <div *ngFor="let vehicle of launchpad.vehicles_launched; let i = index" [attr.data-index]="i">\n                  <h2>Vehicle n°{{i+1}} : </h2>\n                  <p text-wrap>{{vehicle}}</p>\n                </div>\n            </ion-item>\n    \n          </div>\n          <div>\n              <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n                <p>{{sectionsName[2]}}</p>\n              </button>\n              <ion-item *ngIf="sectionsOpen[2]" no-lines>\n                <p text-wrap>Name : {{ launchpad.location.name }}</p>\n                <p text-wrap>Region : {{ launchpad.location.region }}</p>\n                <p text-wrap>Latitude : {{ launchpad.location.latitude }}</p>\n                <p text-wrap>Longitude : {{ launchpad.location.longitude }}</p>\n              </ion-item>\n            </div>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/,
+            selector: 'page-details-launchpad',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/'<!--\n  Generated template for the DetailsLaunchpadPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- export interface Launchpad {\n    id: string;\n    full_name: string;\n    status: string;\n    location: Location;\n    vehicles_launched: string[];\n    details: string;\n  }\n  \n  export interface Location {\n    name: string;\n    region: string;\n    latitude: number;\n    longitude: number;\n  } -->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{launchpad.full_name}}</ion-title>\n  </ion-navbar>\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n          <img src="">\n        </ion-avatar>\n      <h2>{{launchpad.full_name}} </h2>\n      <p>Status : <ion-badge color ="primary" item-end>{{ launchpad.status }}</ion-badge></p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list inset >\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n              <p>{{sectionsName[0]}}</p>\n            </button>\n              <ion-item *ngIf="sectionsOpen[0]" no-lines>\n                      <p text-wrap>{{launchpad.details}}</p>\n              </ion-item>\n        </div>\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n              <p>{{sectionsName[1]}}</p>\n            </button>\n  \n  \n            <ion-item *ngIf="sectionsOpen[1]" no-lines>\n                <div *ngFor="let vehicle of launchpad.vehicles_launched; let i = index" [attr.data-index]="i">\n                  <h2>Vehicle n°{{i+1}} : </h2>\n                  <p text-wrap>{{vehicle}}</p>\n                </div>\n            </ion-item>\n    \n          </div>\n          <div>\n              <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n                <p>{{sectionsName[2]}}</p>\n              </button>\n              <ion-item *ngIf="sectionsOpen[2]" no-lines>\n                <p text-wrap>Name : {{ launchpad.location.name }}</p>\n                <p text-wrap>Region : {{ launchpad.location.region }}</p>\n                <p text-wrap>Latitude : {{ launchpad.location.latitude }}</p>\n                <p text-wrap>Longitude : {{ launchpad.location.longitude }}</p>\n              </ion-item>\n            </div>\n    </ion-list>\n    \n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], DetailsLaunchpadPage);

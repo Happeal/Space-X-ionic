@@ -18,9 +18,15 @@ import { DetailsCapsulePage } from '../details-capsule/details-capsule';
 export class CapsuleListPage {
   capsules : Capsule[]
   capsule : string = "active";
+
+  FilterCapsulesActive;
+  FilterCapsulesRetired;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllCapsule().subscribe(data =>{
       this.capsules = data;
+      this.initializeItemsRetired();
+      this.initializeItemsActive();
       
   } )
   }
@@ -31,5 +37,60 @@ export class CapsuleListPage {
 
   goToCapsule(capsule : Capsule){
       this.navCtrl.push(DetailsCapsulePage, capsule);
+  }
+
+  onInput(searchTerm){
+
+    if (this.capsule == 'retired'){
+  
+    
+          this.initializeItemsRetired();
+  
+          var searchValue = searchTerm.srcElement.value;
+  
+            if (!searchValue) {
+              return;
+            }
+  
+            this.FilterCapsulesRetired = this.FilterCapsulesRetired.filter((item) => {
+  
+                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                  return true;
+                }
+                return false;
+              }
+          );
+     }
+  
+     else if (this.capsule == 'active'){
+  
+      this.initializeItemsActive();
+  
+      var searchValueActive = searchTerm.srcElement.value;
+  
+        if (!searchValueActive) {
+          return;
+        }
+  
+        this.FilterCapsulesActive = this.FilterCapsulesActive.filter((itemActive) => {
+  
+            if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+              return true;
+            }
+            return false;
+          }
+      );
+  
+   }
+  
+  }
+  
+  initializeItemsRetired(){
+   
+    this.FilterCapsulesRetired = this.capsules;
+  }
+  
+  initializeItemsActive(){
+    this.FilterCapsulesActive= this.capsules;
   }
 }

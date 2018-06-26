@@ -20,6 +20,10 @@ export class LaunchpadListPage {
   launchpads : Launchpad[];
   launchpad : string = "active";
 
+  FilterLaunchpadsActive;
+  FilterLaunchpadsRetired;
+  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllLaunchpads().subscribe(data =>{
       this.launchpads = data;      
@@ -35,5 +39,60 @@ export class LaunchpadListPage {
 
   goToLaunchpad(launchpad : Launchpad){
     this.navCtrl.push(DetailsLaunchpadPage, launchpad);
+  }
+
+  onInput(searchTerm){
+
+    if (this.launchpad == 'retired'){
+  
+    
+          this.initializeItemsRetired();
+  
+          var searchValue = searchTerm.srcElement.value;
+  
+            if (!searchValue) {
+              return;
+            }
+  
+            this.FilterLaunchpadsRetired = this.FilterLaunchpadsRetired.filter((item) => {
+  
+                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                  return true;
+                }
+                return false;
+              }
+          );
+     }
+  
+     else if (this.launchpad == 'active'){
+  
+      this.initializeItemsActive();
+  
+      var searchValueActive = searchTerm.srcElement.value;
+  
+        if (!searchValueActive) {
+          return;
+        }
+  
+        this.FilterLaunchpadsActive = this.FilterLaunchpadsActive.filter((itemActive) => {
+  
+            if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+              return true;
+            }
+            return false;
+          }
+      );
+  
+   }
+  
+  }
+  
+  initializeItemsRetired(){
+   
+    this.FilterLaunchpadsRetired = this.launchpads;
+  }
+  
+  initializeItemsActive(){
+    this.FilterLaunchpadsActive= this.launchpads;
   }
 }

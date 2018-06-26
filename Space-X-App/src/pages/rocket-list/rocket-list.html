@@ -24,9 +24,15 @@
 
 <ion-content padding>
   
+  <ion-searchbar
+  [(ngModel)]="Rocket"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)">
+  </ion-searchbar>
+  
   <div [ngSwitch]="rocket">
     <ion-list *ngSwitchCase="'active'">
-      <div *ngFor = "let rocket of rockets">
+      <div *ngFor = "let rocket of FilterRocketsActive">
         <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">
           <h2>
             <div float-left>{{ rocket.name }}</div>
@@ -41,7 +47,7 @@
     </ion-list>
   
     <ion-list *ngSwitchCase="'retired'">
-      <div *ngFor = "let rocket of rockets">
+      <div *ngFor = "let rocket of FilterRocketsRetired">
       <button ion-item *ngIf="rocket.active == false" >
         <h2>
           <div float-left>{{ rocket.name }}</div>
