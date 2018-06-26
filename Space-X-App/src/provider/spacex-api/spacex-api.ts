@@ -6,6 +6,7 @@ import { Rocket } from '../../models/Rocket';
 import { Launchpad } from '../../models/Launchpad';
 import { Capsule } from '../../models/Capsule';
 import { CapsuleDetail } from '../../models/Capsule';
+import { Spacex } from '../../models/Spacex';
 
 
 
@@ -22,6 +23,11 @@ export class SpacexApiProvider {
   constructor(private http: HttpClient) {
     }
 
+  getInfoOfSpaceX() : Observable<Spacex>{
+    const EndpointUtl = `${this.baseUrl}/info`;
+    return this.http.get<Spacex>(EndpointUtl);
+
+  }
   getAllLaunchesNext() : Observable<Launch[]>{
     const EndpointUtl = `${this.baseUrl}/launches/upcoming`;
     return this.http.get<Launch[]>(EndpointUtl); 

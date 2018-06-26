@@ -20,6 +20,7 @@ import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
+import { InfoPage } from '../pages/info/info';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     DetailsLaunchpadPage,
     RocketListPage,
     CapsuleListPage,
-    LaunchpadListPage
+    LaunchpadListPage,
+    InfoPage
 
 
   ],
@@ -53,7 +55,8 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     RocketListPage,
     CapsuleListPage,
     LaunchpadListPage,
-    DetailsLaunchpadPage
+    DetailsLaunchpadPage,
+    InfoPage
   ],
   providers: [
     StatusBar,
