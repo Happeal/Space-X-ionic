@@ -14,7 +14,8 @@
       <ion-avatar item-start>
         <img src="{{ launch.links.mission_patch_small }}">
       </ion-avatar>
-      <ion-badge color ="primary" item-end>{{ launch.launch_success }}</ion-badge>
+      <ion-badge *ngIf="launch.launch_success" color ="secondary">Success</ion-badge>
+      <ion-badge *ngIf="!launch.launch_success" color ="danger">Failure</ion-badge>
       <h2>{{ launch.mission_name }}</h2>
       <p text-wrap> {{ launch.details }}</p>
   </ion-item>
@@ -34,7 +35,8 @@
                     <h5 text-wrap>{{rocket.description}}</h5>
 
                     <ion-col>
-                        <ion-badge color ="primary" item-end >{{rocket.active}}</ion-badge>
+                        <ion-badge *ngIf="rocket.active" color ="secondary" item-end >Active</ion-badge>
+                        <ion-badge *ngIf="!rocket.active" color ="danger" item-end >Retired</ion-badge>
                         <button ion-button color="light" item-end (click)="goToRocket(rocket)">More</button>
                     </ion-col>
             </ion-item>
@@ -48,7 +50,8 @@
                     <h5 text-wrap>{{caps.details}}</h5>
 
                     <ion-col>
-                        <ion-badge color ="primary" item-end  >{{ caps.status}}</ion-badge>
+                        <ion-badge *ngIf="caps.status" color ="secondary" item-end >Active</ion-badge>
+                        <ion-badge *ngIf="!caps.status" color ="danger" item-end >Retired</ion-badge>
                         <button ion-button color="light" item-end (click)="goToCapsule()">More</button>
                     </ion-col>
             </ion-item>
@@ -65,7 +68,8 @@
                     <h5 text-wrap>{{launchpad.details}}</h5>
 
                     <ion-col>
-                        <ion-badge color ="primary" item-end >{{launchpad.status}}</ion-badge>
+                        <ion-badge *ngIf="launchpad.status" color ="secondary" item-end >Active</ion-badge>
+                        <ion-badge *ngIf="!launchpad.status" color ="danger" item-end >Retired</ion-badge>
                         <button ion-button color="light" item-end (click)="goToLaunchpad(launchpad)">More</button>
                     </ion-col>
             </ion-item>

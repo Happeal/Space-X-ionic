@@ -19,7 +19,8 @@
     <h2>{{capsule.name}} </h2>
     <p>Type : {{capsule.type}}</p>
     <p>Active :
-      <ion-badge color="primary" item-end>{{ capsule.active }}</ion-badge>
+        <ion-badge *ngIf="capsule.active" color ="secondary" item-end >Active</ion-badge>
+        <ion-badge *ngIf="!capsule.active" color ="danger" item-end >Retired</ion-badge>
     </p>
   </ion-item>
 

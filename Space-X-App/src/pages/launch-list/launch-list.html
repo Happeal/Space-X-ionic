@@ -35,7 +35,8 @@
                 <h2>
                   <div float-left>{{ launch.mission_name }}</div>
                   <div float-right>
-                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>
+                    <ion-badge *ngIf="launch.launch_success" color ="secondary">Success</ion-badge>
+                    <ion-badge *ngIf="!launch.launch_success" color ="danger">Failure</ion-badge>
                   </div>
                 </h2>
                 <br />

@@ -20,7 +20,8 @@
     <h2>{{rocket.name}} </h2>
     <p>Type : {{rocket.type}}</p>
     <p>Active :
-      <ion-badge color="primary" item-end>{{ rocket.active }}</ion-badge>
+        <ion-badge *ngIf="rocket.active" color ="secondary" item-end >Active</ion-badge>
+        <ion-badge *ngIf="!rocket.active" color ="danger" item-end >Retired</ion-badge>
     </p>
   </ion-item>
 

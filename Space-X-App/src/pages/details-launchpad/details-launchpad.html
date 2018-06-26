@@ -31,7 +31,8 @@
           <img src="">
         </ion-avatar>
       <h2>{{launchpad.full_name}} </h2>
-      <p>Status : <ion-badge color ="primary" item-end>{{ launchpad.status }}</ion-badge></p>
+      <p>Status : <ion-badge *ngIf="launchpad.status" color ="secondary" item-end >{{launchpad.status}}</ion-badge>
+        <ion-badge *ngIf="!launchpad.status" color ="danger" item-end >Retired</ion-badge></p>
   </ion-item>
 
 </ion-header>
