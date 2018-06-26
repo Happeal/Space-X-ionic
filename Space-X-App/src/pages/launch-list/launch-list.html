@@ -30,11 +30,15 @@
 
 
 <ion-content padding>
+  <ion-searchbar
+    [(ngModel)]="Launch"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)">
+  </ion-searchbar>
 
-      
-      <div [ngSwitch]="launch">
+       <div [ngSwitch]="launch">
         <ion-list *ngSwitchCase="'latest'">
-            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">
+            <button ion-item *ngFor = "let launch of FilterLaunchLatest" (click)="goToDetails(launch)">
                 <ion-avatar item-start>
                   <img src="{{ launch.links.mission_patch_small }}">
                 </ion-avatar>
@@ -51,7 +55,7 @@
         </ion-list>
       
         <ion-list *ngSwitchCase="'soon'">
-            <button ion-item *ngFor = "let launch of launches"> 
+            <button ion-item *ngFor = "let launch of FilterLaunch"> 
                 <h2>
                   <div float-left>{{ launch.mission_name }}</div>
                   <div float-right>

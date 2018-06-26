@@ -22,9 +22,12 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 })
 export class LaunchListPage {
  
-  launch : string = "latest";
+
+  launch : String = 'latest';
   launches: Launch[];
   launchesLatest : Launch[];
+  FilterLaunch;
+  FilterLaunchLatest;
 
   constructor(
     private navCtrl: NavController, 
@@ -34,11 +37,13 @@ export class LaunchListPage {
     {
       this.spacexApi.getAllLaunchesLatest().subscribe(data =>{
         this.launchesLatest = data;
+        this.initializeItemsLatest();
         
     } )
 
    this.spacexApi.getAllLaunchesNext().subscribe(data =>{
       this.launches = data;
+      this.initializeItemsSoon();
       console.log("Next launch : " + this.launches[0].mission_name); 
       this.notif();
 
@@ -66,7 +71,65 @@ export class LaunchListPage {
 
 }
 
+onInput(searchTerm){
 
+  if (this.launch == 'latest'){
+
+  
+        this.initializeItemsLatest();
+
+        var searchValue = searchTerm.srcElement.value;
+
+          if (!searchValue) {
+            return;
+          }
+
+          this.FilterLaunchLatest = this.FilterLaunchLatest.filter((item) => {
+
+              if (item.mission_name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                return true;
+              }
+              return false;
+            }
+        );
+   }
+
+   else if (this.launch == 'soon'){
+
+    this.initializeItemsSoon();
+
+    var searchValueSoon = searchTerm.srcElement.value;
+
+<<<<<<< HEAD
+=======
+      if (!searchValueSoon) {
+        return;
+      }
+
+      this.FilterLaunch = this.FilterLaunch.filter((itemSoon) => {
+
+          if (itemSoon.mission_name.toLowerCase().indexOf(searchValueSoon.toLowerCase()) > -1) {
+            return true;
+          }
+          return false;
+        }
+    );
+
+ }
+
+}
+
+initializeItemsLatest(){
+ 
+  this.FilterLaunchLatest = this.launchesLatest;
+}
+
+initializeItemsSoon(){
+  this.FilterLaunch = this.launches;
+}
+/*
+getDatesBetween()  {
+>>>>>>> features/searchBar
 
 
 }

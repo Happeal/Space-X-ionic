@@ -23,9 +23,16 @@
 
 
 <ion-content padding>
+
+    <ion-searchbar
+    [(ngModel)]="Capsule"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)">
+    </ion-searchbar>
+
   <div [ngSwitch]="capsule">
       <ion-list *ngSwitchCase="'active'">
-        <div *ngFor = "let capsule of capsules">
+        <div *ngFor = "let capsule of FilterCapsulesActive">
           <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">
               <h2>
                   <div float-left>{{ capsule.name }}</div>
@@ -39,7 +46,7 @@
       </ion-list>
     
       <ion-list *ngSwitchCase="'retired'">
-        <div *ngFor = "let capsule of capsules">
+        <div *ngFor = "let capsule of FilterCapsulesRetired">
         <button ion-item *ngIf="capsule.active == false" >
             <h2>
                 <div float-left>{{ capsule.name }}</div>
