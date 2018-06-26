@@ -100,8 +100,6 @@ onInput(searchTerm){
 
     var searchValueSoon = searchTerm.srcElement.value;
 
-<<<<<<< HEAD
-=======
       if (!searchValueSoon) {
         return;
       }
@@ -127,9 +125,5 @@ initializeItemsLatest(){
 initializeItemsSoon(){
   this.FilterLaunch = this.launches;
 }
-/*
-getDatesBetween()  {
->>>>>>> features/searchBar
-
 
 }
