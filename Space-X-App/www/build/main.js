@@ -197,12 +197,14 @@ var LaunchListPage = /** @class */ (function () {
         this.navParams = navParams;
         this.spacexApi = spacexApi;
         this.localNotifications = localNotifications;
-        this.launch = "latest";
+        this.launch = 'latest';
         this.spacexApi.getAllLaunchesLatest().subscribe(function (data) {
             _this.launchesLatest = data;
+            _this.initializeItemsLatest();
         });
         this.spacexApi.getAllLaunchesNext().subscribe(function (data) {
             _this.launches = data;
+            _this.initializeItemsSoon();
             console.log("Next launch : " + _this.launches[0].mission_name);
             _this.notif();
         });
@@ -219,9 +221,43 @@ var LaunchListPage = /** @class */ (function () {
             text: 'Next launch ' + this.launches[0].mission_name
         });
     };
+    LaunchListPage.prototype.onInput = function (searchTerm) {
+        if (this.launch == 'latest') {
+            this.initializeItemsLatest();
+            var searchValue = searchTerm.srcElement.value;
+            if (!searchValue) {
+                return;
+            }
+            this.FilterLaunchLatest = this.FilterLaunchLatest.filter(function (item) {
+                if (item.mission_name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+        else if (this.launch == 'soon') {
+            this.initializeItemsSoon();
+            var searchValueSoon = searchTerm.srcElement.value;
+            if (!searchValueSoon) {
+                return;
+            }
+            this.FilterLaunch = this.FilterLaunch.filter(function (itemSoon) {
+                if (itemSoon.mission_name.toLowerCase().indexOf(searchValueSoon.toLowerCase()) > -1) {
+                    return true;
+                }
+                return false;
+            });
+        }
+    };
+    LaunchListPage.prototype.initializeItemsLatest = function () {
+        this.FilterLaunchLatest = this.launchesLatest;
+    };
+    LaunchListPage.prototype.initializeItemsSoon = function () {
+        this.FilterLaunch = this.launches;
+    };
     LaunchListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launch-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-list</ion-title>\n  </ion-navbar>\n\n  <div padding>\n      <ion-segment [(ngModel)]="launch">\n        <ion-segment-button value="latest">\n          Latest\n        </ion-segment-button>\n        <ion-segment-button value="soon">\n          Soon\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n\n      \n      <div [ngSwitch]="launch">\n        <ion-list *ngSwitchCase="\'latest\'">\n            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">\n                <ion-avatar item-start>\n                  <img src="{{ launch.links.mission_patch_small }}">\n                </ion-avatar>\n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.details }}</p>\n            </button>\n        </ion-list>\n      \n        <ion-list *ngSwitchCase="\'soon\'">\n            <button ion-item *ngFor = "let launch of launches"> \n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.site_name_long }}</p>\n            </button> \n        </ion-list>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/,
+            selector: 'page-launch-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-list</ion-title>\n  </ion-navbar>\n\n  <div padding>\n      <ion-segment [(ngModel)]="launch">\n        <ion-segment-button value="latest">\n          Latest\n        </ion-segment-button>\n        <ion-segment-button value="soon">\n          Soon\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-searchbar\n    [(ngModel)]="Launch"\n    [showCancelButton]="shouldShowCancel"\n    (ionInput)="onInput($event)">\n  </ion-searchbar>\n\n       <div [ngSwitch]="launch">\n        <ion-list *ngSwitchCase="\'latest\'">\n            <button ion-item *ngFor = "let launch of FilterLaunchLatest" (click)="goToDetails(launch)">\n                <ion-avatar item-start>\n                  <img src="{{ launch.links.mission_patch_small }}">\n                </ion-avatar>\n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.details }}</p>\n            </button>\n        </ion-list>\n      \n        <ion-list *ngSwitchCase="\'soon\'">\n            <button ion-item *ngFor = "let launch of FilterLaunch"> \n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.site_name_long }}</p>\n            </button> \n        </ion-list>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */]) === "function" && _d || Object])
     ], LaunchListPage);
