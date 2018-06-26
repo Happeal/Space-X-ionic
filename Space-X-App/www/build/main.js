@@ -1,4 +1,4 @@
-webpackJsonp([9],{
+webpackJsonp([10],{
 
 /***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,8 +6,8 @@ webpackJsonp([9],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapsuleListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_capsule_details_capsule__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -64,8 +64,8 @@ var CapsuleListPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsLaunchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_rocket_details_rocket__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__details_capsule_details_capsule__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__details_launchpad_details_launchpad__ = __webpack_require__(53);
@@ -164,10 +164,10 @@ var DetailsLaunchPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,6 +177,61 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+/**
+ * Generated class for the HistoryPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryPage = /** @class */ (function () {
+    function HistoryPage(navCtrl, navParams, spacexApi) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.spacexApi.getHistoryOfSpaceX().subscribe(function (data) {
+            _this.history = data;
+        });
+    }
+    HistoryPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HistoryPage');
+    };
+    HistoryPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-history',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/history/history.html"*/'<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- export interface SpacexHistory {\n  title: string;\n  event_date_utc: string;\n  event_date_unix: number;\n  flight_number?: number;\n  details: string;\n  links: Links;\n}\n -->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>SpaceX History</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngIf="history">\n      <ion-list>\n         <div *ngFor="let hist of history">\n            <ion-item-divider>\n                <h5 text-wrap>{{hist.title}}</h5>\n              </ion-item-divider>\n              <p text-wrap>Event Date : {{ hist.event_date_utc}}</p>\n              <p *ngIf="hist.flight_number" text-wrap>Flight Number : {{hist.flight_number}}</p>\n              <p text-wrap>Details : {{hist.details}}</p>\n\n         </div> \n      </ion-list>\n\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/history/history.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+    ], HistoryPage);
+    return HistoryPage;
+}());
+
+//# sourceMappingURL=history.js.map
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__history_history__ = __webpack_require__(105);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 
@@ -199,9 +254,12 @@ var InfoPage = /** @class */ (function () {
     InfoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad InfoPage');
     };
+    InfoPage.prototype.goToHistory = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__history_history__["a" /* HistoryPage */]);
+    };
     InfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-info',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/info/info.html"*/'<!--\n  Generated template for the InfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n<!-- {\nname: "SpaceX",\nfounder: "Elon Musk",\nfounded: 2002,\nemployees: 7000,\nvehicles: 3,\nlaunch_sites: 3,\ntest_sites: 1,\nceo: "Elon Musk",\ncto: "Elon Musk",\ncoo: "Gwynne Shotwell",\ncto_propulsion: "Tom Mueller",\nvaluation: 15000000000,\nheadquarters: {\naddress: "Rocket Road",\ncity: "Hawthorne",\nstate: "California"\n},\nsummary: "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets."\n} -->\n  <ion-navbar>\n    <ion-title>SpaceX</ion-title>\n  </ion-navbar>\n\n  <ion-item >\n    <h2 >SpaceX</h2>\n\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngIf="infoSpaceX">\n    <p>\n      {{infoSpaceX.summary}}\n    </p>\n      <p >Valuation :\n          <ion-badge color ="money" item-end >{{infoSpaceX.valuation}}</ion-badge>\n      </p>\n      <ion-item-divider>\n          Global informations\n        </ion-item-divider>\n    <ion-row>\n        <ion-col col-6>\n          <h3>Founder : </h3>\n          <p >{{infoSpaceX.founder}}</p>\n        </ion-col>\n        <ion-col col-6>\n            <h3>Founded : </h3>\n            <p >{{infoSpaceX.founded}}</p>\n          </ion-col>\n      </ion-row>\n\n        <ion-row>\n            <ion-col col-6>\n              <h5>Employees : </h5>\n              <p >{{infoSpaceX.employees}}</p>\n            </ion-col>\n            <ion-col col-6>\n                <h5>Vehicles : </h5>\n                <p >{{infoSpaceX.vehicles}}</p>\n              </ion-col>\n        </ion-row>\n\n        <ion-row>\n            <ion-col col-6>\n              <h5>Launch Sites :</h5>\n              <p >{{infoSpaceX.launch_sites}}</p>\n            </ion-col>\n            <ion-col col-6>\n                <h5>Test Sites : </h5>\n                <p >{{infoSpaceX.test_sites}}</p>\n              </ion-col>\n        </ion-row>\n        <ion-item-divider>\n            Headquarter informations\n          </ion-item-divider>\n          <ion-row>\n              <ion-col col-6>\n                <h5>Address</h5>\n                <p >{{infoSpaceX.headquarters.address}}</p>\n              </ion-col>\n              <ion-col col-6>\n                  <h5>City : </h5>\n                  <p >{{infoSpaceX.headquarters.city}}</p>\n                </ion-col>\n          </ion-row>\n          <ion-row>\n              <ion-col col-6>\n                <h5>State : </h5>\n                <p >{{infoSpaceX.headquarters.state}}</p>\n              </ion-col>\n          </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/info/info.html"*/,
+            selector: 'page-info',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/info/info.html"*/'<!--\n  Generated template for the InfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SpaceX</ion-title>\n  </ion-navbar>\n\n  \n  <ion-item >\n    <div float-left>\n    <h2 >SpaceX</h2>\n  </div>\n    <div float-right>\n    <button ion-button  end (click)="goToHistory()"> \n        History\n      </button>\n      </div>\n\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngIf="infoSpaceX">\n    <p>\n      {{infoSpaceX.summary}}\n    </p>\n      <p >Valuation :\n          <ion-badge color ="money" item-end >{{infoSpaceX.valuation}}$</ion-badge>\n      </p>\n      <ion-item-divider>\n          Global informations\n        </ion-item-divider>\n    <ion-row>\n        <ion-col col-6>\n          <h3>Founder : </h3>\n          <p >{{infoSpaceX.founder}}</p>\n        </ion-col>\n        <ion-col col-6>\n            <h3>Founded : </h3>\n            <p >{{infoSpaceX.founded}}</p>\n          </ion-col>\n      </ion-row>\n\n        <ion-row>\n            <ion-col col-6>\n              <h5>Employees : </h5>\n              <p >{{infoSpaceX.employees}}</p>\n            </ion-col>\n            <ion-col col-6>\n                <h5>Vehicles : </h5>\n                <p >{{infoSpaceX.vehicles}}</p>\n              </ion-col>\n        </ion-row>\n\n        <ion-row>\n            <ion-col col-6>\n              <h5>Launch Sites :</h5>\n              <p >{{infoSpaceX.launch_sites}}</p>\n            </ion-col>\n            <ion-col col-6>\n                <h5>Test Sites : </h5>\n                <p >{{infoSpaceX.test_sites}}</p>\n              </ion-col>\n        </ion-row>\n        <ion-item-divider>\n            Headquarter informations\n          </ion-item-divider>\n          <ion-row>\n              <ion-col col-6>\n                <h5>Address</h5>\n                <p >{{infoSpaceX.headquarters.address}}</p>\n              </ion-col>\n              <ion-col col-6>\n                  <h5>City : </h5>\n                  <p >{{infoSpaceX.headquarters.city}}</p>\n                </ion-col>\n          </ion-row>\n          <ion-row>\n              <ion-col col-6>\n                <h5>State : </h5>\n                <p >{{infoSpaceX.headquarters.state}}</p>\n              </ion-col>\n          </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/info/info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
@@ -213,74 +271,16 @@ var InfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchpadListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__ = __webpack_require__(53);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the LaunchpadListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LaunchpadListPage = /** @class */ (function () {
-    function LaunchpadListPage(navCtrl, navParams, spacexApi) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.spacexApi = spacexApi;
-        this.launchpad = "active";
-        this.spacexApi.getAllLaunchpads().subscribe(function (data) {
-            _this.launchpads = data;
-        });
-    }
-    LaunchpadListPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LaunchpadListPage');
-    };
-    LaunchpadListPage.prototype.goToLaunchpad = function (launchpad) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */], launchpad);
-    };
-    LaunchpadListPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-launchpad-list',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/'<!--\n  Generated template for the LaunchpadListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Launchpads</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="launchpad">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>  \n</ion-header>\n\n<ion-content padding>\n  <div [ngSwitch]="launchpad">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let launchpad of launchpads"  >\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n            <h2>\n                  <div float-left>{{ launchpad.location.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="secondary">{{ launchpad.status }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launchpad.location.region }}</p>\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let launchpad of launchpads">\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n            <h2>\n                <div float-left>{{ launchpad.location.name }}</div>\n                <div float-right>\n                  <ion-badge color ="danger">{{ launchpad.status }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n              <p>{{ launchpad.location.region }}</p>\n        </button>\n        </div>\n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
-    ], LaunchpadListPage);
-    return LaunchpadListPage;
-}());
-
-//# sourceMappingURL=launchpad-list.js.map
-
-/***/ }),
-
 /***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__info_info__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__info_info__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -346,10 +346,68 @@ var LaunchListPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchpadListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__ = __webpack_require__(53);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the LaunchpadListPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LaunchpadListPage = /** @class */ (function () {
+    function LaunchpadListPage(navCtrl, navParams, spacexApi) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.launchpad = "active";
+        this.spacexApi.getAllLaunchpads().subscribe(function (data) {
+            _this.launchpads = data;
+        });
+    }
+    LaunchpadListPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LaunchpadListPage');
+    };
+    LaunchpadListPage.prototype.goToLaunchpad = function (launchpad) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */], launchpad);
+    };
+    LaunchpadListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-launchpad-list',template:/*ion-inline-start:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/'<!--\n  Generated template for the LaunchpadListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Launchpads</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="launchpad">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>  \n</ion-header>\n\n<ion-content padding>\n  <div [ngSwitch]="launchpad">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let launchpad of launchpads"  >\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n            <h2>\n                  <div float-left>{{ launchpad.location.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="secondary">{{ launchpad.status }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launchpad.location.region }}</p>\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let launchpad of launchpads">\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n            <h2>\n                <div float-left>{{ launchpad.location.name }}</div>\n                <div float-right>\n                  <ion-badge color ="danger">{{ launchpad.status }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n              <p>{{ launchpad.location.region }}</p>\n        </button>\n        </div>\n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/benjaminmetaut/Documents/Dev/ionicProjects/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+    ], LaunchpadListPage);
+    return LaunchpadListPage;
+}());
+
+//# sourceMappingURL=launchpad-list.js.map
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RocketListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_rocket_details_rocket__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -400,7 +458,7 @@ var RocketListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -413,48 +471,52 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 120;
+webpackEmptyAsyncContext.id = 121;
 
 /***/ }),
 
-/***/ 162:
+/***/ 163:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/capsule-list/capsule-list.module": [
-		285,
-		8
+		286,
+		9
 	],
 	"../pages/details-capsule/details-capsule.module": [
-		286,
-		7
+		287,
+		8
 	],
 	"../pages/details-launch/details-launch.module": [
-		287,
-		6
+		288,
+		7
 	],
 	"../pages/details-launchpad/details-launchpad.module": [
-		288,
-		5
+		289,
+		6
 	],
 	"../pages/details-rocket/details-rocket.module": [
-		289,
+		290,
+		5
+	],
+	"../pages/history/history.module": [
+		291,
 		4
 	],
 	"../pages/info/info.module": [
-		290,
+		292,
 		3
 	],
 	"../pages/launch-list/launch-list.module": [
-		292,
+		293,
 		2
 	],
 	"../pages/launchpad-list/launchpad-list.module": [
-		291,
+		294,
 		1
 	],
 	"../pages/rocket-list/rocket-list.module": [
-		293,
+		295,
 		0
 	]
 };
@@ -469,21 +531,21 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 162;
+webpackAsyncContext.id = 163;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__launch_list_launch_list__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -517,13 +579,13 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -531,123 +593,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 229:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_info_info__ = __webpack_require__(105);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AppModule = /** @class */ (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__["a" /* LaunchListPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__["a" /* DetailsLaunchPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__["a" /* DetailsRocketPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__["a" /* DetailsCapsulePage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_info_info__["a" /* InfoPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
-                    links: [
-                        { loadChildren: '../pages/capsule-list/capsule-list.module#CapsuleListPageModule', name: 'CapsuleListPage', segment: 'capsule-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/details-capsule/details-capsule.module#DetailsCapsulePageModule', name: 'DetailsCapsulePage', segment: 'details-capsule', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/details-launch/details-launch.module#DetailsLaunchPageModule', name: 'DetailsLaunchPage', segment: 'details-launch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/details-launchpad/details-launchpad.module#DetailsLaunchpadPageModule', name: 'DetailsLaunchpadPage', segment: 'details-launchpad', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/details-rocket/details-rocket.module#DetailsRocketPageModule', name: 'DetailsRocketPage', segment: 'details-rocket', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/launchpad-list/launchpad-list.module#LaunchpadListPageModule', name: 'LaunchpadListPage', segment: 'launchpad-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/rocket-list/rocket-list.module#RocketListPageModule', name: 'RocketListPage', segment: 'rocket-list', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__["a" /* LaunchListPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__["a" /* DetailsLaunchPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__["a" /* DetailsRocketPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__["a" /* DetailsCapsulePage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_info_info__["a" /* InfoPage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]
-            ]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 26:
+/***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpacexApiProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -673,6 +624,10 @@ var SpacexApiProvider = /** @class */ (function () {
     }
     SpacexApiProvider.prototype.getInfoOfSpaceX = function () {
         var EndpointUtl = this.baseUrl + "/info";
+        return this.http.get(EndpointUtl);
+    };
+    SpacexApiProvider.prototype.getHistoryOfSpaceX = function () {
+        var EndpointUtl = this.baseUrl + "/info/history";
         return this.http.get(EndpointUtl);
     };
     SpacexApiProvider.prototype.getAllLaunchesNext = function () {
@@ -722,16 +677,132 @@ var SpacexApiProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 230:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_info_info__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_history_history__ = __webpack_require__(105);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__["a" /* LaunchListPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__["a" /* DetailsLaunchPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__["a" /* DetailsRocketPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__["a" /* DetailsCapsulePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_info_info__["a" /* InfoPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_history_history__["a" /* HistoryPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/capsule-list/capsule-list.module#CapsuleListPageModule', name: 'CapsuleListPage', segment: 'capsule-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/details-capsule/details-capsule.module#DetailsCapsulePageModule', name: 'DetailsCapsulePage', segment: 'details-capsule', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/details-launch/details-launch.module#DetailsLaunchPageModule', name: 'DetailsLaunchPage', segment: 'details-launch', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/details-launchpad/details-launchpad.module#DetailsLaunchpadPageModule', name: 'DetailsLaunchpadPage', segment: 'details-launchpad', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/details-rocket/details-rocket.module#DetailsRocketPageModule', name: 'DetailsRocketPage', segment: 'details-rocket', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/launch-list/launch-list.module#LaunchListPageModule', name: 'LaunchListPage', segment: 'launch-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/launchpad-list/launchpad-list.module#LaunchpadListPageModule', name: 'LaunchpadListPage', segment: 'launchpad-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/rocket-list/rocket-list.module#RocketListPageModule', name: 'RocketListPage', segment: 'rocket-list', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */]
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__["a" /* LaunchListPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__["a" /* DetailsLaunchPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__["a" /* DetailsRocketPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__["a" /* DetailsCapsulePage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__["a" /* RocketListPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__["a" /* CapsuleListPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__["a" /* LaunchpadListPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__["a" /* DetailsLaunchpadPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_info_info__["a" /* InfoPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_history_history__["a" /* HistoryPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -774,8 +845,8 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsCapsulePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -844,7 +915,7 @@ var DetailsCapsulePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsRocketPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -912,7 +983,7 @@ var DetailsRocketPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsLaunchpadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -973,5 +1044,5 @@ var DetailsLaunchpadPage = /** @class */ (function () {
 
 /***/ })
 
-},[208]);
+},[209]);
 //# sourceMappingURL=main.js.map

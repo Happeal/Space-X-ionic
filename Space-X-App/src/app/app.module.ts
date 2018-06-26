@@ -21,6 +21,7 @@ import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
 import { InfoPage } from '../pages/info/info';
+import { HistoryPage } from '../pages/history/history';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { InfoPage } from '../pages/info/info';
     RocketListPage,
     CapsuleListPage,
     LaunchpadListPage,
-    InfoPage
+    InfoPage,
+    HistoryPage
 
 
   ],
@@ -56,7 +58,8 @@ import { InfoPage } from '../pages/info/info';
     CapsuleListPage,
     LaunchpadListPage,
     DetailsLaunchpadPage,
-    InfoPage
+    InfoPage,
+    HistoryPage
   ],
   providers: [
     StatusBar,

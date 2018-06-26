@@ -1,0 +1,42 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!-- export interface SpacexHistory {
+  title: string;
+  event_date_utc: string;
+  event_date_unix: number;
+  flight_number?: number;
+  details: string;
+  links: Links;
+}
+ -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SpaceX History</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="history">
+      <ion-list>
+         <div *ngFor="let hist of history">
+            <ion-item-divider>
+                <h5 text-wrap>{{hist.title}}</h5>
+              </ion-item-divider>
+              <p text-wrap>Event Date : {{ hist.event_date_utc}}</p>
+              <p *ngIf="hist.flight_number" text-wrap>Flight Number : {{hist.flight_number}}</p>
+              <p text-wrap>Details : {{hist.details}}</p>
+
+         </div> 
+      </ion-list>
+
+  </div>
+
+</ion-content>

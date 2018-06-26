@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Spacex } from '../../models/Spacex';
+import { HistoryPage } from '../history/history';
 
 /**
  * Generated class for the InfoPage page.
@@ -30,6 +31,10 @@ export class InfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
+  }
+
+  goToHistory(){
+    this.navCtrl.push(HistoryPage);
   }
 
 }
