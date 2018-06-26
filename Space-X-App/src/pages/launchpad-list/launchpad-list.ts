@@ -26,7 +26,9 @@ export class LaunchpadListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private spacexApi: SpacexApiProvider) {
     this.spacexApi.getAllLaunchpads().subscribe(data =>{
-      this.launchpads = data;      
+      this.launchpads = data;    
+      this.initializeItemsActive();
+      this.initializeItemsRetired();  
   } )
 
   
@@ -44,8 +46,6 @@ export class LaunchpadListPage {
   onInput(searchTerm){
 
     if (this.launchpad == 'retired'){
-  
-    
           this.initializeItemsRetired();
   
           var searchValue = searchTerm.srcElement.value;
@@ -56,7 +56,7 @@ export class LaunchpadListPage {
   
             this.FilterLaunchpadsRetired = this.FilterLaunchpadsRetired.filter((item) => {
   
-                if (item.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
+                if (item.location.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
                   return true;
                 }
                 return false;
@@ -76,7 +76,7 @@ export class LaunchpadListPage {
   
         this.FilterLaunchpadsActive = this.FilterLaunchpadsActive.filter((itemActive) => {
   
-            if (itemActive.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
+            if (itemActive.location.name.toLowerCase().indexOf(searchValueActive.toLowerCase()) > -1) {
               return true;
             }
             return false;
