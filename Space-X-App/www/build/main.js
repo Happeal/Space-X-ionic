@@ -1,13 +1,22 @@
 webpackJsonp([10],{
 
+<<<<<<< HEAD
 /***/ 103:
+=======
+/***/ 104:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapsuleListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+>>>>>>> features/notifications
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_capsule_details_capsule__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47,7 +56,11 @@ var CapsuleListPage = /** @class */ (function () {
     };
     CapsuleListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-capsule-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\capsule-list\capsule-list.html"*/'<!--\n\n  Generated template for the CapsuleListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Capsules</ion-title>\n\n  </ion-navbar>\n\n  <div padding>\n\n      <ion-segment [(ngModel)]="capsule">\n\n        <ion-segment-button value="active">\n\n          Active\n\n        </ion-segment-button>\n\n        <ion-segment-button value="retired">\n\n          Retired\n\n        </ion-segment-button>\n\n      </ion-segment>\n\n    </div>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="capsule">\n\n      <ion-list *ngSwitchCase="\'active\'">\n\n        <div *ngFor = "let capsule of capsules">\n\n          <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">\n\n              <h2>\n\n                  <div float-left>{{ capsule.name }}</div>\n\n                  <div float-right>\n\n                    <ion-badge color ="secondary">Active</ion-badge>\n\n                  </div>\n\n                </h2>\n\n                <br />\n\n          </button>\n\n          </div>\n\n      </ion-list>\n\n    \n\n      <ion-list *ngSwitchCase="\'retired\'">\n\n        <div *ngFor = "let capsule of capsules">\n\n        <button ion-item *ngIf="capsule.active == false" >\n\n            <h2>\n\n                <div float-left>{{ capsule.name }}</div>\n\n                <div float-right>\n\n                  <ion-badge color ="danger">Retired</ion-badge>\n\n                </div>\n\n              </h2>\n\n              <br />\n\n        </button>\n\n        </div>\n\n      </ion-list>\n\n    </div>  \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\capsule-list\capsule-list.html"*/,
+=======
+            selector: 'page-capsule-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/'<!--\n  Generated template for the CapsuleListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>capsule-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="capsule">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n  <div [ngSwitch]="capsule">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let capsule of capsules">\n          <button ion-item *ngIf="capsule.active == true" (click)="goToCapsule(capsule)">\n              <h2>\n                  <div float-left>{{ capsule.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let capsule of capsules">\n        <button ion-item *ngIf="capsule.active == false" >\n            <h2>\n                <div float-left>{{ capsule.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ capsule.active }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n        </button>\n        </div>\n      </ion-list>\n    </div>  \n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/capsule-list/capsule-list.html"*/,
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], CapsuleListPage);
@@ -58,14 +71,23 @@ var CapsuleListPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 104:
+=======
+/***/ 105:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsLaunchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+>>>>>>> features/notifications
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_rocket_details_rocket__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__details_capsule_details_capsule__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__details_launchpad_details_launchpad__ = __webpack_require__(53);
@@ -147,7 +169,11 @@ var DetailsLaunchPage = /** @class */ (function () {
     };
     DetailsLaunchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-details-launch',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\details-launch\details-launch.html"*/'<!--\n\n  Generated template for the DetailsLaunchPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{launch.mission_name}}</ion-title>\n\n  </ion-navbar>\n\n\n\n  <ion-item no-lines>\n\n      <ion-avatar item-start>\n\n        <img src="{{ launch.links.mission_patch_small }}">\n\n      </ion-avatar>\n\n      <ion-badge *ngIf="launch.launch_success" color ="secondary">Success</ion-badge>\n\n      <ion-badge *ngIf="!launch.launch_success" color ="danger">Failure</ion-badge>\n\n      <h2>{{ launch.mission_name }}</h2>\n\n      <p text-wrap> {{ launch.details }}</p>\n\n  </ion-item>\n\n\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list inset >\n\n      <div>\n\n          <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n\n            <p>{{sectionsName[0]}}</p>\n\n          </button>\n\n            <ion-item *ngIf="sectionsOpen[0] && rocket" no-lines>\n\n                    <h2 text-wrap>{{rocket.name}}</h2>\n\n                    <h5 text-wrap>{{rocket.description}}</h5>\n\n\n\n                    <ion-col>\n\n                        <ion-badge *ngIf="rocket.active" color ="secondary" item-end >Active</ion-badge>\n\n                        <ion-badge *ngIf="!rocket.active" color ="danger" item-end >Retired</ion-badge>\n\n                        <button ion-button color="light" item-end (click)="goToRocket(rocket)">More</button>\n\n                    </ion-col>\n\n            </ion-item>\n\n      </div>\n\n      <div>\n\n          <button ion-item detail-push item-end clear (click)="sectionSelected(1)" >\n\n            <p>{{sectionsName[1]}}</p>\n\n          </button>\n\n            <ion-item *ngIf="sectionsOpen[1] && caps" no-lines>\n\n                    <h2 text-wrap>{{caps.type}}</h2>\n\n                    <h5 text-wrap>{{caps.details}}</h5>\n\n\n\n                    <ion-col>\n\n                        <ion-badge *ngIf="caps.status" color ="secondary" item-end >Active</ion-badge>\n\n                        <ion-badge *ngIf="!caps.status" color ="danger" item-end >Retired</ion-badge>\n\n                        <button ion-button color="light" item-end (click)="goToCapsule()">More</button>\n\n                    </ion-col>\n\n            </ion-item>\n\n            <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>\n\n              <h5 text-wrap>There is no capsule corresponding to the following launch.</h5>\n\n            </ion-item>\n\n      </div>\n\n      <div>\n\n          <button ion-item detail-push item-end clear (click)="sectionSelected(2)" >\n\n            <p>{{sectionsName[2]}}</p>\n\n          </button>\n\n            <ion-item *ngIf="sectionsOpen[2] && launchpad" no-lines>\n\n                    <h2 text-wrap>{{launchpad.full_name}}</h2>\n\n                    <h5 text-wrap>{{launchpad.details}}</h5>\n\n\n\n                    <ion-col>\n\n                        <ion-badge *ngIf="launchpad.status" color ="secondary" item-end >Active</ion-badge>\n\n                        <ion-badge *ngIf="!launchpad.status" color ="danger" item-end >Retired</ion-badge>\n\n                        <button ion-button color="light" item-end (click)="goToLaunchpad(launchpad)">More</button>\n\n                    </ion-col>\n\n            </ion-item>\n\n      </div>\n\n      \n\n      </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\details-launch\details-launch.html"*/,
+=======
+            selector: 'page-details-launch',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/'<!--\n  Generated template for the DetailsLaunchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{launch.mission_name}}</ion-title>\n  </ion-navbar>\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n        <img src="{{ launch.links.mission_patch_small }}">\n      </ion-avatar>\n      <ion-badge color ="primary" item-end>{{ launch.launch_success }}</ion-badge>\n      <h2>{{ launch.mission_name }}</h2>\n      <p text-wrap> {{ launch.details }}</p>\n  </ion-item>\n\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list inset >\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n            <p>{{sectionsName[0]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[0] && rocket" no-lines>\n                    <h2 text-wrap>{{rocket.name}}</h2>\n                    <h5 text-wrap>{{rocket.description}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end >{{rocket.active}}</ion-badge>\n                        <button ion-button color="light" item-end (click)="goToRocket(rocket)">More</button>\n                    </ion-col>\n            </ion-item>\n      </div>\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(1)" >\n            <p>{{sectionsName[1]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[1] && caps" no-lines>\n                    <h2 text-wrap>{{caps.type}}</h2>\n                    <h5 text-wrap>{{caps.details}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end  >{{ caps.status}}</ion-badge>\n                        <button ion-button color="light" item-end (click)="goToCapsule()">More</button>\n                    </ion-col>\n            </ion-item>\n            <ion-item *ngIf="sectionsOpen[1] && !caps" no-lines>\n              <h5 text-wrap>There is no capsule corresponding to the following launch.</h5>\n            </ion-item>\n      </div>\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(2)" >\n            <p>{{sectionsName[2]}}</p>\n          </button>\n            <ion-item *ngIf="sectionsOpen[2] && launchpad" no-lines>\n                    <h2 text-wrap>{{launchpad.full_name}}</h2>\n                    <h5 text-wrap>{{launchpad.details}}</h5>\n\n                    <ion-col>\n                        <ion-badge color ="primary" item-end >{{launchpad.status}}</ion-badge>\n                        <button ion-button color="light" item-end (click)="goToLaunchpad(launchpad)">More</button>\n                    </ion-col>\n            </ion-item>\n      </div>\n      \n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launch/details-launch.html"*/,
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
@@ -160,6 +186,7 @@ var DetailsLaunchPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -272,15 +299,25 @@ var InfoPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 107:
+=======
+/***/ 106:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__info_info__ = __webpack_require__(106);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(164);
+>>>>>>> features/notifications
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -302,20 +339,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var LaunchListPage = /** @class */ (function () {
-    function LaunchListPage(navCtrl, navParams, spacexApi) {
+    function LaunchListPage(navCtrl, navParams, spacexApi, localNotifications) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.spacexApi = spacexApi;
+        this.localNotifications = localNotifications;
         this.launch = "latest";
         this.spacexApi.getAllLaunchesLatest().subscribe(function (data) {
             _this.launchesLatest = data;
         });
         this.spacexApi.getAllLaunchesNext().subscribe(function (data) {
             _this.launches = data;
-            console.log("Data Next  : " + data);
-            console.log("Nom : " + _this.launches[0]);
-            console.log(JSON.stringify(_this.launches));
+            console.log("Next launch : " + _this.launches[0].mission_name);
+            _this.notif();
         });
     }
     LaunchListPage.prototype.ionViewDidLoad = function () {
@@ -324,6 +361,7 @@ var LaunchListPage = /** @class */ (function () {
     LaunchListPage.prototype.goToDetails = function (launch) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__details_launch_details_launch__["a" /* DetailsLaunchPage */], launch);
     };
+<<<<<<< HEAD
     LaunchListPage.prototype.goToInformation = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__info_info__["a" /* InfoPage */]);
     };
@@ -334,26 +372,45 @@ var LaunchListPage = /** @class */ (function () {
 =======
             selector: 'page-launch-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\launch-list\launch-list.html"*/'<!--\n\n  Generated template for the LaunchListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Launches</ion-title>\n\n  </ion-navbar>\n\n\n\n  <div padding>\n\n      <ion-segment [(ngModel)]="launch">\n\n        <ion-segment-button value="latest">\n\n          Latest\n\n        </ion-segment-button>\n\n        <ion-segment-button value="soon">\n\n          Soon\n\n        </ion-segment-button>\n\n      </ion-segment>\n\n    </div>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n      \n\n      <div [ngSwitch]="launch">\n\n        <ion-list *ngSwitchCase="\'latest\'">\n\n            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">\n\n                <ion-avatar item-start>\n\n                  <img src="{{ launch.links.mission_patch_small }}">\n\n                </ion-avatar>\n\n                <h2>\n\n                  <div float-left>{{ launch.mission_name }}</div>\n\n                  <div float-right>\n\n                    <ion-badge *ngIf="launch.launch_success" color ="secondary">Success</ion-badge>\n\n                    <ion-badge *ngIf="!launch.launch_success" color ="danger">Failure</ion-badge>\n\n                  </div>\n\n                </h2>\n\n                <br />\n\n                <p>{{ launch.details }}</p>\n\n            </button>\n\n        </ion-list>\n\n      \n\n        <ion-list *ngSwitchCase="\'soon\'">\n\n            <button ion-item *ngFor = "let launch of launches"> \n\n                <h2>\n\n                  <div float-left>{{ launch.mission_name }}</div>\n\n                  <div float-right>\n\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n\n                  </div>\n\n                </h2>\n\n                <br />\n\n                <p>{{ launch.site_name_long }}</p>\n\n            </button> \n\n        </ion-list>\n\n      </div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\launch-list\launch-list.html"*/,
 >>>>>>> features/icon-tab
+=======
+    LaunchListPage.prototype.notif = function () {
+        this.localNotifications.schedule({
+            id: 1,
+            text: 'Next launch ' + this.launches[0].mission_name
+        });
+    };
+    LaunchListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-launch-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/'<!--\n  Generated template for the LaunchListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>launch-list</ion-title>\n  </ion-navbar>\n\n  <div padding>\n      <ion-segment [(ngModel)]="launch">\n        <ion-segment-button value="latest">\n          Latest\n        </ion-segment-button>\n        <ion-segment-button value="soon">\n          Soon\n        </ion-segment-button>\n      </ion-segment>\n    </div>\n</ion-header>\n\n\n<ion-content padding>\n\n      \n      <div [ngSwitch]="launch">\n        <ion-list *ngSwitchCase="\'latest\'">\n            <button ion-item *ngFor = "let launch of launchesLatest" (click)="goToDetails(launch)">\n                <ion-avatar item-start>\n                  <img src="{{ launch.links.mission_patch_small }}">\n                </ion-avatar>\n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.details }}</p>\n            </button>\n        </ion-list>\n      \n        <ion-list *ngSwitchCase="\'soon\'">\n            <button ion-item *ngFor = "let launch of launches"> \n                <h2>\n                  <div float-left>{{ launch.mission_name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launch.launch_success }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launch.site_name_long }}</p>\n            </button> \n        </ion-list>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launch-list/launch-list.html"*/,
+>>>>>>> features/notifications
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */]) === "function" && _d || Object])
     ], LaunchListPage);
     return LaunchListPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=launch-list.js.map
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 108:
+=======
+/***/ 107:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LaunchpadListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+>>>>>>> features/notifications
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_launchpad_details_launchpad__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -393,7 +450,11 @@ var LaunchpadListPage = /** @class */ (function () {
     };
     LaunchpadListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-launchpad-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\launchpad-list\launchpad-list.html"*/'<!--\n\n  Generated template for the LaunchpadListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Launchpads</ion-title>\n\n  </ion-navbar>\n\n  <div padding>\n\n      <ion-segment [(ngModel)]="launchpad">\n\n        <ion-segment-button value="active">\n\n          Active\n\n        </ion-segment-button>\n\n        <ion-segment-button value="retired">\n\n          Retired\n\n        </ion-segment-button>\n\n      </ion-segment>\n\n    </div>  \n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div [ngSwitch]="launchpad">\n\n      <ion-list *ngSwitchCase="\'active\'">\n\n        <div *ngFor = "let launchpad of launchpads"  >\n\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n\n            <h2>\n\n                  <div float-left>{{ launchpad.location.name }}</div>\n\n                  <div float-right>\n\n                    <ion-badge color ="secondary">{{ launchpad.status }}</ion-badge>\n\n                  </div>\n\n                </h2>\n\n                <br />\n\n                <p>{{ launchpad.location.region }}</p>\n\n          </button>\n\n          </div>\n\n      </ion-list>\n\n    \n\n      <ion-list *ngSwitchCase="\'retired\'">\n\n        <div *ngFor = "let launchpad of launchpads">\n\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n\n            <h2>\n\n                <div float-left>{{ launchpad.location.name }}</div>\n\n                <div float-right>\n\n                  <ion-badge color ="danger">{{ launchpad.status }}</ion-badge>\n\n                </div>\n\n              </h2>\n\n              <br />\n\n              <p>{{ launchpad.location.region }}</p>\n\n        </button>\n\n        </div>\n\n      </ion-list>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\launchpad-list\launchpad-list.html"*/,
+=======
+            selector: 'page-launchpad-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/'<!--\n  Generated template for the LaunchpadListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>launchpad-list</ion-title>\n  </ion-navbar>\n  <div padding>\n      <ion-segment [(ngModel)]="launchpad">\n        <ion-segment-button value="active">\n          Active\n        </ion-segment-button>\n        <ion-segment-button value="retired">\n          Retired\n        </ion-segment-button>\n      </ion-segment>\n    </div>  \n</ion-header>\n\n<ion-content padding>\n  <div [ngSwitch]="launchpad">\n      <ion-list *ngSwitchCase="\'active\'">\n        <div *ngFor = "let launchpad of launchpads"  >\n          <button ion-item *ngIf="launchpad.status == \'active\' || launchpad.status == \'under construction\'" (click)="goToLaunchpad(launchpad)">\n            <h2>\n                  <div float-left>{{ launchpad.location.name }}</div>\n                  <div float-right>\n                    <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                  </div>\n                </h2>\n                <br />\n                <p>{{ launchpad.location.region }}</p>\n          </button>\n          </div>\n      </ion-list>\n    \n      <ion-list *ngSwitchCase="\'retired\'">\n        <div *ngFor = "let launchpad of launchpads">\n        <button ion-item *ngIf="launchpad.status == \'retired\'" >\n            <h2>\n                <div float-left>{{ launchpad.location.name }}</div>\n                <div float-right>\n                  <ion-badge color ="primary">{{ launchpad.status }}</ion-badge>\n                </div>\n              </h2>\n              <br />\n              <p>{{ launchpad.location.region }}</p>\n        </button>\n        </div>\n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/launchpad-list/launchpad-list.html"*/,
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], LaunchpadListPage);
@@ -404,14 +465,23 @@ var LaunchpadListPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 109:
+=======
+/***/ 108:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RocketListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+>>>>>>> features/notifications
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_rocket_details_rocket__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -451,7 +521,11 @@ var RocketListPage = /** @class */ (function () {
     };
     RocketListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-rocket-list',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/'<!--\n\n  Generated template for the RocketListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Rockets</ion-title>\n\n  </ion-navbar>\n\n  <div padding>\n\n    <ion-segment [(ngModel)]="rocket">\n\n      <ion-segment-button value="active">\n\n        Active\n\n      </ion-segment-button>\n\n      <ion-segment-button value="retired">\n\n        Retired\n\n      </ion-segment-button>\n\n    </ion-segment>\n\n  </div>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  \n\n  <div [ngSwitch]="rocket">\n\n    <ion-list *ngSwitchCase="\'active\'">\n\n      <div *ngFor = "let rocket of rockets">\n\n        <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">\n\n          <h2>\n\n            <div float-left>{{ rocket.name }}</div>\n\n            <div float-right>\n\n              <ion-badge color ="secondary">Active</ion-badge>\n\n            </div>\n\n          </h2>\n\n          <br />\n\n          <p>{{ rocket.first_flight }}</p>\n\n        </button>\n\n        </div>\n\n    </ion-list>\n\n  \n\n    <ion-list *ngSwitchCase="\'retired\'">\n\n      <div *ngFor = "let rocket of rockets">\n\n      <button ion-item *ngIf="rocket.active == false" >\n\n        <h2>\n\n          <div float-left>{{ rocket.name }}</div>\n\n          <div float-right>\n\n            <ion-badge color ="danger">Retired</ion-badge>\n\n          </div>\n\n        </h2>\n\n        <br />\n\n        <p>{{ rocket.first_flight }}</p>\n\n      </button>\n\n      </div>\n\n    </ion-list>\n\n  </div>\n\n\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\rocket-list\rocket-list.html"*/,
+=======
+            selector: 'page-rocket-list',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/'<!--\n  Generated template for the RocketListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>rocket-list</ion-title>\n  </ion-navbar>\n  <div padding>\n    <ion-segment [(ngModel)]="rocket">\n      <ion-segment-button value="active">\n        Active\n      </ion-segment-button>\n      <ion-segment-button value="retired">\n        Retired\n      </ion-segment-button>\n    </ion-segment>\n  </div>\n</ion-header>\n\n\n<ion-content padding>\n  \n  <div [ngSwitch]="rocket">\n    <ion-list *ngSwitchCase="\'active\'">\n      <div *ngFor = "let rocket of rockets">\n        <button ion-item *ngIf="rocket.active == true" (click)="goToRocket(rocket)">\n          <h2>\n            <div float-left>{{ rocket.name }}</div>\n            <div float-right>\n              <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n            </div>\n          </h2>\n          <br />\n          <p>{{ rocket.first_flight }}</p>\n        </button>\n        </div>\n    </ion-list>\n  \n    <ion-list *ngSwitchCase="\'retired\'">\n      <div *ngFor = "let rocket of rockets">\n      <button ion-item *ngIf="rocket.active == false" >\n        <h2>\n          <div float-left>{{ rocket.name }}</div>\n          <div float-right>\n            <ion-badge color ="primary">{{ rocket.active }}</ion-badge>\n          </div>\n        </h2>\n        <br />\n        <p>{{ rocket.first_flight }}</p>\n      </button>\n      </div>\n    </ion-list>\n  </div>\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/rocket-list/rocket-list.html"*/,
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
     ], RocketListPage);
@@ -462,7 +536,11 @@ var RocketListPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 121:
+=======
+/***/ 120:
+>>>>>>> features/notifications
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -475,15 +553,24 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
+<<<<<<< HEAD
 webpackEmptyAsyncContext.id = 121;
 
 /***/ }),
 
 /***/ 163:
+=======
+webpackEmptyAsyncContext.id = 120;
+
+/***/ }),
+
+/***/ 162:
+>>>>>>> features/notifications
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/capsule-list/capsule-list.module": [
+<<<<<<< HEAD
 		286,
 		9
 	],
@@ -521,6 +608,37 @@ var map = {
 	],
 	"../pages/rocket-list/rocket-list.module": [
 		295,
+=======
+		285,
+		7
+	],
+	"../pages/details-capsule/details-capsule.module": [
+		286,
+		6
+	],
+	"../pages/details-launch/details-launch.module": [
+		287,
+		5
+	],
+	"../pages/details-launchpad/details-launchpad.module": [
+		288,
+		4
+	],
+	"../pages/details-rocket/details-rocket.module": [
+		289,
+		3
+	],
+	"../pages/launch-list/launch-list.module": [
+		290,
+		2
+	],
+	"../pages/launchpad-list/launchpad-list.module": [
+		291,
+		1
+	],
+	"../pages/rocket-list/rocket-list.module": [
+		292,
+>>>>>>> features/notifications
 		0
 	]
 };
@@ -535,21 +653,36 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
+<<<<<<< HEAD
 webpackAsyncContext.id = 163;
+=======
+webpackAsyncContext.id = 162;
+>>>>>>> features/notifications
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 208:
+=======
+/***/ 207:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__launch_list_launch_list__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__ = __webpack_require__(108);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__launch_list_launch_list__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rocket_list_rocket_list__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__capsule_list_capsule_list__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__ = __webpack_require__(107);
+>>>>>>> features/notifications
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -572,7 +705,11 @@ var TabsPage = /** @class */ (function () {
         this.tab4Root = __WEBPACK_IMPORTED_MODULE_4__launchpad_list_launchpad_list__["a" /* LaunchpadListPage */];
     }
     TabsPage = __decorate([
+<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="Launch" tabIcon="flash"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Rocket" tabIcon="jet"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="Capsule" tabIcon="disc"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="Launchpad" tabIcon="settings"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\tabs\tabs.html"*/
+=======
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Launch" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Rocket" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Capsule" tabIcon="contacts"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Launchpad" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/tabs/tabs.html"*/
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -583,13 +720,22 @@ var TabsPage = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 209:
+=======
+/***/ 208:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
+>>>>>>> features/notifications
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -597,6 +743,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -682,12 +829,16 @@ var SpacexApiProvider = /** @class */ (function () {
 /***/ }),
 
 /***/ 230:
+=======
+/***/ 229:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(164);
@@ -705,6 +856,24 @@ var SpacexApiProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_info_info__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_history_history__ = __webpack_require__(105);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_details_launch_details_launch__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_details_rocket_details_rocket__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_details_capsule_details_capsule__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_details_launchpad_details_launchpad__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_launch_list_launch_list__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rocket_list_rocket_list__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_capsule_list_capsule_list__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_launchpad_list_launchpad_list__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_local_notifications__ = __webpack_require__(164);
+>>>>>>> features/notifications
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -729,7 +898,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> features/notifications
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -786,7 +958,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]
+                __WEBPACK_IMPORTED_MODULE_8__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_local_notifications__["a" /* LocalNotifications */]
             ]
         })
     ], AppModule);
@@ -797,16 +970,27 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 277:
+=======
+/***/ 284:
+>>>>>>> features/notifications
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(208);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(207);
+>>>>>>> features/notifications
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -832,7 +1016,11 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
+<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\app\app.html"*/
+=======
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/app/app.html"*/
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -847,10 +1035,16 @@ var MyApp = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsCapsulePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(21);
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpacexApiProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+>>>>>>> features/notifications
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -985,6 +1179,144 @@ var DetailsRocketPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsCapsulePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the DetailsCapsulePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DetailsCapsulePage = /** @class */ (function () {
+    function DetailsCapsulePage(navCtrl, navParams, spacexApi) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.spacexApi = spacexApi;
+        this.sections = [];
+        this.sectionsName = [
+            "Numbers",
+            "Heatshield",
+            "Thrusters"
+        ];
+        this.sectionsOpen = [
+            false,
+            false,
+            false
+        ];
+        this.capsule = this.navParams.data;
+    }
+    DetailsCapsulePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetailsCapsulePage');
+    };
+    DetailsCapsulePage.prototype.sectionSelected = function (index) {
+        for (var i = 0; i < this.sectionsOpen.length; i++) {
+            if (i == index) {
+                this.sectionsOpen[i] = !this.sectionsOpen[i];
+            }
+            else {
+                this.sectionsOpen[i] = false;
+            }
+        }
+    };
+    DetailsCapsulePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-details-capsule',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-capsule/details-capsule.html"*/'<!--\n  Generated template for the DetailsCapsulePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{capsule.name}} </ion-title>\n\n  </ion-navbar>\n  <ion-item no-lines>\n    <ion-avatar item-start>\n      <img src="../../assets/icon/capsule.svg">\n    </ion-avatar>\n    <h2>{{capsule.name}} </h2>\n    <p>Type : {{capsule.type}}</p>\n    <p>Active :\n      <ion-badge color="primary" item-end>{{ capsule.active }}</ion-badge>\n    </p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list inset>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(0)">\n        <p>{{sectionsName[0]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[0]" no-lines>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Crew Capacity : </h1>\n            <p>{{capsule.crew_capacity}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Sidewall angle : </h1>\n            <p>{{capsule.sidewall_angle_deg}}°</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Orbit duration : </h1>\n            <p>{{capsule.orbit_duration_yr}} year</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Height : </h1>\n            <p>{{capsule.height_w_trunk.meters}}m</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Diameter : </h1>\n            <p>{{capsule.diameter.meters}}m</p>\n          </ion-col>\n        </ion-row>\n\n      </ion-item>\n      <!-- export interface Capsule {\n   material: string;\n    size_meters: number;\n    temp_degrees: number;\n    dev_partner: string;\n  }\n  -->\n      <div>\n        <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n          <p>{{sectionsName[1]}}</p>\n        </button>\n        <ion-item *ngIf="sectionsOpen[1]" no-lines>\n            <p>Material : {{capsule.heat_shield.material}}</p>\n            <p>Size : {{capsule.heat_shield.size_meters}}m</p>\n            <p>Temperature : {{capsule.heat_shield.temp_degrees}}°</p>\n            <p>Dev partner : {{capsule.heat_shield.dev_partner}}</p>\n        </ion-item>\n\n      </div>\n\n      <div>\n          <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n            <p>{{sectionsName[2]}}</p>\n          </button>\n\n\n          <ion-item *ngIf="sectionsOpen[2]" no-lines>\n              <ion-card *ngFor="let thrust of capsule.thrusters; let i = index" [attr.data-index]="i">\n                <ion-card-header>\n                  <p text-wrap> Thrust n°{{i+1}}</p>\n                </ion-card-header>  \n                <ion-card-content>\n                    <p text-wrap>Amount : {{thrust.amount}}</p>\n                    <p text-wrap>Pods : {{thrust.pods}}</p>\n                    <p text-wrap>Fuel 1 : {{thrust.fuel_1}}</p>\n                    <p text-wrap>Fuel 2 : {{thrust.fuel_2}}</p>\n                  </ion-card-content>\n                </ion-card>\n                \n          </ion-item>\n  \n        </div>\n\n    </div>\n\n\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-capsule/details-capsule.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__provider_spacex_api_spacex_api__["a" /* SpacexApiProvider */]])
+    ], DetailsCapsulePage);
+    return DetailsCapsulePage;
+}());
+
+//# sourceMappingURL=details-capsule.js.map
+
+/***/ }),
+
+/***/ 52:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsRocketPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the DetailsRocketPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DetailsRocketPage = /** @class */ (function () {
+    function DetailsRocketPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.sections = [];
+        this.sectionsName = [
+            "Description",
+            "Numbers",
+            "Engines"
+        ];
+        this.sectionsOpen = [
+            false,
+            false,
+            false
+        ];
+        //console.log(navParams.data);
+        this.rocket = this.navParams.data;
+    }
+    DetailsRocketPage.prototype.sectionSelected = function (index) {
+        for (var i = 0; i < this.sectionsOpen.length; i++) {
+            if (i == index) {
+                this.sectionsOpen[i] = !this.sectionsOpen[i];
+            }
+            else {
+                this.sectionsOpen[i] = false;
+            }
+        }
+    };
+    DetailsRocketPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetailsRocketPage');
+    };
+    DetailsRocketPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-details-rocket',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/'<!--\n  Generated template for the DetailsRocketPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n<ion-header>\n\n\n  <ion-navbar>\n    <ion-title>{{rocket.name}} </ion-title>\n\n  </ion-navbar>\n  <ion-item no-lines>\n    <ion-avatar item-start>\n      <img src="../../assets/icon/rocket.svg">\n    </ion-avatar>\n    <h2>{{rocket.name}} </h2>\n    <p>Type : {{rocket.type}}</p>\n    <p>Active :\n      <ion-badge color="primary" item-end>{{ rocket.active }}</ion-badge>\n    </p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list inset>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(0)">\n        <p>{{sectionsName[0]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[0]" no-lines>\n        <p text-wrap> {{ rocket.description }}</p>\n      </ion-item>\n    </div>\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n        <p>{{sectionsName[1]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[1]" no-lines>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Stages : </h1>\n            <p>{{rocket.stages}}</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Boosters : </h1>\n            <p>{{rocket.boosters}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Coast per launch : </h1>\n            <p>{{rocket.cost_per_launch}}$</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <h1>Success rate : </h1>\n            <p>{{rocket.success_rate_pct}}%</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6>\n            <h1>Height : </h1>\n            <p>{{rocket.height.meters}}m</p>\n          </ion-col>\n          <ion-col col-6>\n            <h1>Diameter : </h1>\n            <p>{{rocket.diameter.meters}}m</p>\n          </ion-col>\n        </ion-row>\n\n      </ion-item>\n    </div>\n\n    <div>\n      <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n        <p>{{sectionsName[2]}}</p>\n      </button>\n      <ion-item *ngIf="sectionsOpen[2]" no-lines>\n        <p text-wrap>Number : {{ rocket.engines.number }}</p>\n        <p text-wrap>Type : {{ rocket.engines.type }}</p>\n        <p text-wrap>Version : {{ rocket.engines.version }}</p>\n        <p text-wrap>Layout : {{ rocket.engines.layout }}</p>\n      </ion-item>\n    </div>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-rocket/details-rocket.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], DetailsRocketPage);
+    return DetailsRocketPage;
+}());
+
+//# sourceMappingURL=details-rocket.js.map
+
+/***/ }),
+
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsLaunchpadPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
@@ -1037,7 +1369,11 @@ var DetailsLaunchpadPage = /** @class */ (function () {
     };
     DetailsLaunchpadPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-details-launchpad',template:/*ion-inline-start:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\details-launchpad\details-launchpad.html"*/'<!--\n\n  Generated template for the DetailsLaunchpadPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<!-- export interface Launchpad {\n\n    id: string;\n\n    full_name: string;\n\n    status: string;\n\n    location: Location;\n\n    vehicles_launched: string[];\n\n    details: string;\n\n  }\n\n  \n\n  export interface Location {\n\n    name: string;\n\n    region: string;\n\n    latitude: number;\n\n    longitude: number;\n\n  } -->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{launchpad.full_name}}</ion-title>\n\n  </ion-navbar>\n\n\n\n  <ion-item no-lines>\n\n      <ion-avatar item-start>\n\n          <img src="../../assets/icon/launchpad.svg">\n\n        </ion-avatar>\n\n      <h2>{{launchpad.full_name}} </h2>\n\n      <p>Status : <ion-badge *ngIf="launchpad.status" color ="secondary" item-end >{{launchpad.status}}</ion-badge>\n\n        <ion-badge *ngIf="!launchpad.status" color ="danger" item-end >Retired</ion-badge></p>\n\n  </ion-item>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list inset >\n\n        <div>\n\n            <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n\n              <p>{{sectionsName[0]}}</p>\n\n            </button>\n\n              <ion-item *ngIf="sectionsOpen[0]" no-lines>\n\n                      <p text-wrap>{{launchpad.details}}</p>\n\n              </ion-item>\n\n        </div>\n\n        <div>\n\n            <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n\n              <p>{{sectionsName[1]}}</p>\n\n            </button>\n\n  \n\n  \n\n            <ion-item *ngIf="sectionsOpen[1]" no-lines>\n\n                <div *ngFor="let vehicle of launchpad.vehicles_launched; let i = index" [attr.data-index]="i">\n\n                  <h2>Vehicle n°{{i+1}} : </h2>\n\n                  <p text-wrap>{{vehicle}}</p>\n\n                </div>\n\n            </ion-item>\n\n    \n\n          </div>\n\n          <div>\n\n              <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n\n                <p>{{sectionsName[2]}}</p>\n\n              </button>\n\n              <ion-item *ngIf="sectionsOpen[2]" no-lines>\n\n                <p text-wrap>Name : {{ launchpad.location.name }}</p>\n\n                <p text-wrap>Region : {{ launchpad.location.region }}</p>\n\n                <p text-wrap>Latitude : {{ launchpad.location.latitude }}</p>\n\n                <p text-wrap>Longitude : {{ launchpad.location.longitude }}</p>\n\n              </ion-item>\n\n            </div>\n\n    </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\kguljin\Documents\ESGI\CrossPlateforme\new\Space-X-ionic\Space-X-App\src\pages\details-launchpad\details-launchpad.html"*/,
+=======
+            selector: 'page-details-launchpad',template:/*ion-inline-start:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/'<!--\n  Generated template for the DetailsLaunchpadPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<!-- export interface Launchpad {\n    id: string;\n    full_name: string;\n    status: string;\n    location: Location;\n    vehicles_launched: string[];\n    details: string;\n  }\n  \n  export interface Location {\n    name: string;\n    region: string;\n    latitude: number;\n    longitude: number;\n  } -->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{launchpad.full_name}}</ion-title>\n  </ion-navbar>\n\n  <ion-item no-lines>\n      <ion-avatar item-start>\n          <img src="">\n        </ion-avatar>\n      <h2>{{launchpad.full_name}} </h2>\n      <p>Status : <ion-badge color ="primary" item-end>{{ launchpad.status }}</ion-badge></p>\n  </ion-item>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-list inset >\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(0)" >\n              <p>{{sectionsName[0]}}</p>\n            </button>\n              <ion-item *ngIf="sectionsOpen[0]" no-lines>\n                      <p text-wrap>{{launchpad.details}}</p>\n              </ion-item>\n        </div>\n        <div>\n            <button ion-item detail-push item-end clear (click)="sectionSelected(1)">\n              <p>{{sectionsName[1]}}</p>\n            </button>\n  \n  \n            <ion-item *ngIf="sectionsOpen[1]" no-lines>\n                <div *ngFor="let vehicle of launchpad.vehicles_launched; let i = index" [attr.data-index]="i">\n                  <h2>Vehicle n°{{i+1}} : </h2>\n                  <p text-wrap>{{vehicle}}</p>\n                </div>\n            </ion-item>\n    \n          </div>\n          <div>\n              <button ion-item detail-push item-end clear (click)="sectionSelected(2)">\n                <p>{{sectionsName[2]}}</p>\n              </button>\n              <ion-item *ngIf="sectionsOpen[2]" no-lines>\n                <p text-wrap>Name : {{ launchpad.location.name }}</p>\n                <p text-wrap>Region : {{ launchpad.location.region }}</p>\n                <p text-wrap>Latitude : {{ launchpad.location.latitude }}</p>\n                <p text-wrap>Longitude : {{ launchpad.location.longitude }}</p>\n              </ion-item>\n            </div>\n    </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/mohamed/Desktop/Space X App/Space-X-ionic/Space-X-App/src/pages/details-launchpad/details-launchpad.html"*/,
+>>>>>>> features/notifications
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], DetailsLaunchpadPage);
@@ -1048,5 +1384,9 @@ var DetailsLaunchpadPage = /** @class */ (function () {
 
 /***/ })
 
+<<<<<<< HEAD
 },[209]);
+=======
+},[208]);
+>>>>>>> features/notifications
 //# sourceMappingURL=main.js.map

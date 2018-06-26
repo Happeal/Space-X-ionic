@@ -3,8 +3,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Launch } from '../../models/Launch';
 import { DetailsLaunchPage } from '../details-launch/details-launch';
+<<<<<<< HEAD
 import { InfoPage } from '../info/info';
 
+=======
+import { LocalNotifications } from '@ionic-native/local-notifications';
+>>>>>>> features/notifications
 /**
  * Generated class for the LaunchListPage page.
  *
@@ -26,7 +30,8 @@ export class LaunchListPage {
   constructor(
     private navCtrl: NavController, 
     private navParams: NavParams,
-    private spacexApi: SpacexApiProvider ) 
+    private spacexApi: SpacexApiProvider,
+    private localNotifications: LocalNotifications ) 
     {
       this.spacexApi.getAllLaunchesLatest().subscribe(data =>{
         this.launchesLatest = data;
@@ -35,13 +40,14 @@ export class LaunchListPage {
 
    this.spacexApi.getAllLaunchesNext().subscribe(data =>{
       this.launches = data;
-      console.log("Data Next  : " + data);  
-      console.log("Nom : " + this.launches[0]); 
-      console.log(JSON.stringify(this.launches));
+      console.log("Next launch : " + this.launches[0].mission_name); 
+      this.notif();
+
     } )
   }
 
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad LaunchListPage');
   }
 
@@ -49,8 +55,28 @@ export class LaunchListPage {
     this.navCtrl.push(DetailsLaunchPage, launch);
   }
 
+<<<<<<< HEAD
   goToInformation(){
     this.navCtrl.push(InfoPage);
   }
+=======
+  notif(){
+
+  this.localNotifications.schedule({
+    id: 1,
+    text: 'Next launch '+ this.launches[0].mission_name 
+  });
+
+}
+
+
+/*
+getDatesBetween()  {
+
+  var time = new Date().getTime() - new Date(this.launches[0].launch_date_local).getTime();
+  
+  return time;
+} */
+>>>>>>> features/notifications
 
 }

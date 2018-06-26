@@ -20,8 +20,12 @@ import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
+<<<<<<< HEAD
 import { InfoPage } from '../pages/info/info';
 import { HistoryPage } from '../pages/history/history';
+=======
+import { LocalNotifications } from '@ionic-native/local-notifications';
+>>>>>>> features/notifications
 
 
 @NgModule({
@@ -65,7 +69,8 @@ import { HistoryPage } from '../pages/history/history';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SpacexApiProvider
+    SpacexApiProvider,
+    LocalNotifications
 
   ]
 })
