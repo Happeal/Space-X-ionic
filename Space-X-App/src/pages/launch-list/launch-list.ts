@@ -3,12 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpacexApiProvider } from '../../provider/spacex-api/spacex-api';
 import { Launch } from '../../models/Launch';
 import { DetailsLaunchPage } from '../details-launch/details-launch';
-<<<<<<< HEAD
+
 import { InfoPage } from '../info/info';
 
-=======
 import { LocalNotifications } from '@ionic-native/local-notifications';
->>>>>>> features/notifications
+
 /**
  * Generated class for the LaunchListPage page.
  *
@@ -55,11 +54,9 @@ export class LaunchListPage {
     this.navCtrl.push(DetailsLaunchPage, launch);
   }
 
-<<<<<<< HEAD
   goToInformation(){
     this.navCtrl.push(InfoPage);
   }
-=======
   notif(){
 
   this.localNotifications.schedule({
@@ -70,13 +67,6 @@ export class LaunchListPage {
 }
 
 
-/*
-getDatesBetween()  {
 
-  var time = new Date().getTime() - new Date(this.launches[0].launch_date_local).getTime();
-  
-  return time;
-} */
->>>>>>> features/notifications
 
 }
