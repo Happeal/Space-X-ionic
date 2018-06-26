@@ -20,6 +20,7 @@ import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SpacexApiProvider
+    SpacexApiProvider,
+    LocalNotifications
 
   ]
 })
